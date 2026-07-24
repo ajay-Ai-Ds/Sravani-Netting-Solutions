@@ -79,10 +79,10 @@ export default function AreasOverview() {
               href={`/areas/${area.slug}`}
               className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col items-center justify-center text-center group"
             >
-              <h2 className="text-xl font-bold text-slate-800 group-hover:text-primary font-display">
+              <h2 className="text-xl font-bold text-slate-800 group-hover:text-secondary font-display">
                 {area.name}
               </h2>
-              <span className="text-accent text-sm mt-2 font-semibold">View Details &rarr;</span>
+              <span className="text-secondary text-sm mt-2 font-semibold">View Details &rarr;</span>
             </Link>
           ))}
         </div>

@@ -21,7 +21,7 @@ export default function BlogListingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary font-bold">
               Our Blog
             </span>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-3 font-display">
@@ -30,7 +30,7 @@ export default function BlogListingPage() {
             <p className="text-slate-600 mt-4 text-base sm:text-lg">
               Read our latest guides on protecting your Chennai apartment from pigeons, monkeys, and accidental falls.
             </p>
-            <div className="h-1 bg-accent w-16 mx-auto mt-6 rounded" />
+            <div className="h-1 bg-secondary w-16 mx-auto mt-6 rounded" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,10 +47,10 @@ export default function BlogListingPage() {
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <time className="text-xs font-bold text-primary tracking-wider uppercase mb-2 block">
+                    <time className="text-xs font-bold text-secondary tracking-wider uppercase mb-2 block">
                       {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                     </time>
-                    <h2 className="font-bold text-xl text-slate-900 font-display mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                    <h2 className="font-bold text-xl text-slate-900 font-display mb-3 group-hover:text-secondary transition-colors line-clamp-2">
                       <Link href={`/blog/${post.slug}`}>
                         {post.title}
                       </Link>
@@ -61,7 +61,7 @@ export default function BlogListingPage() {
                   </div>
                   <Link 
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center text-sm font-bold text-primary hover:text-primary-light transition-colors"
+                    className="inline-flex items-center text-sm font-bold text-secondary hover:text-secondary-dark transition-colors"
                   >
                     Read Article →
                   </Link>

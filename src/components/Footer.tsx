@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <footer className="bg-[#002957] text-slate-300 pt-16 pb-8 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Bio */}
@@ -25,13 +25,13 @@ export default function Footer() {
             <div className="flex items-center mb-4">
               <Logo height={56} theme="dark" />
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <p className="text-slate-300 text-sm leading-relaxed mb-6">
               {"Chennai's trusted safety net installation experts. Protecting your family, balcony, pets, and children with 100% premium, UV-resistant, long-lasting materials."}
             </p>
             <div className="flex space-x-3">
               <a
                 href="tel:+918637607910"
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 hover:bg-primary-light text-white transition-colors duration-200"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-secondary text-white transition-colors duration-200"
                 aria-label="Call Us"
               >
                 <Phone className="w-5 h-5 fill-white" />
@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://wa.me/918637607910?text=Hi%20Sravani%20Netting%20Solutions%2C%20I%20need%20more%20information%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 hover:bg-accent hover:text-slate-900 text-slate-900 transition-colors duration-200"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-secondary text-white transition-colors duration-200"
                 aria-label="WhatsApp Us"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@ export default function Footer() {
                 <a
                   href="#home"
                   onClick={(e) => handleNavClick(e, "#home")}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Home
                 </a>
@@ -66,7 +66,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/blog"
-                  className="hover:text-primary-light hover:underline transition-colors text-amber-400 font-semibold"
+                  className="hover:text-secondary-light hover:underline transition-colors text-secondary-light font-semibold"
                 >
                   Blog & Articles
                 </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                     handleNavClick(e, "#services");
                     window.dispatchEvent(new CustomEvent("change-services-tab", { detail: "nets" }));
                   }}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Safety Nets
                 </a>
@@ -90,7 +90,7 @@ export default function Footer() {
                     handleNavClick(e, "#services");
                     window.dispatchEvent(new CustomEvent("change-services-tab", { detail: "grills" }));
                   }}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Invisible Grills
                 </a>
@@ -102,7 +102,7 @@ export default function Footer() {
                     handleNavClick(e, "#services");
                     window.dispatchEvent(new CustomEvent("change-services-tab", { detail: "hangers" }));
                   }}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Cloth Hangers
                 </a>
@@ -111,7 +111,7 @@ export default function Footer() {
                 <a
                   href="#why-choose-us"
                   onClick={(e) => handleNavClick(e, "#why-choose-us")}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Why Choose Us
                 </a>
@@ -120,7 +120,7 @@ export default function Footer() {
                 <a
                   href="#gallery"
                   onClick={(e) => handleNavClick(e, "#gallery")}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Gallery
                 </a>
@@ -129,7 +129,7 @@ export default function Footer() {
                 <a
                   href="#reviews"
                   onClick={(e) => handleNavClick(e, "#reviews")}
-                  className="hover:text-primary-light hover:underline transition-colors"
+                  className="hover:text-secondary-light hover:underline transition-colors"
                 >
                   Reviews
                 </a>
@@ -140,7 +140,7 @@ export default function Footer() {
           {/* Our Services */}
           <div>
             <h3 className="font-bold text-white text-base mb-4 font-display">Services</h3>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-300">
               <li>Balcony Safety Nets</li>
               <li>Pigeon Safety Nets</li>
               <li>Monkey Safety Nets</li>
@@ -156,11 +156,11 @@ export default function Footer() {
             <h3 className="font-bold text-white text-base mb-4 font-display">Contact Info</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
-                <MapPin className="w-5 h-5 text-primary-light shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-secondary-light shrink-0 mt-0.5" />
                 <span>Chennai, Tamil Nadu - India</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary-light shrink-0" />
+                <Phone className="w-4 h-4 text-secondary-light shrink-0" />
                 <a href="tel:+918637607910" className="hover:text-white transition-colors font-semibold">
                   +91 86376 07910
                 </a>
@@ -170,13 +170,13 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-primary-light shrink-0" />
+                <Mail className="w-4 h-4 text-secondary-light shrink-0" />
                 <a href="mailto:sravaninettingsolutions@gmail.com" className="hover:text-white transition-colors">
                   sravaninettingsolutions@gmail.com
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-primary-light shrink-0" />
+                <Clock className="w-4 h-4 text-secondary-light shrink-0" />
                 <span>Open 24 Hours / 7 Days</span>
               </li>
             </ul>

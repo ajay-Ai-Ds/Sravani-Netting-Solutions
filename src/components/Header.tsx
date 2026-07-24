@@ -220,7 +220,7 @@ export default function Header() {
             <div className="hidden sm:flex items-center space-x-1.5 xl:space-x-2.5">
               <a
                 href="tel:+918637607910"
-                className="group flex items-center space-x-1.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-2.5 py-2 xl:px-3.5 xl:py-2.5 rounded-xl text-xs xl:text-sm font-bold hover:shadow-md hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 border border-white/10 whitespace-nowrap"
+                className="group flex items-center space-x-1.5 bg-accent hover:bg-accent-dark text-white px-2.5 py-2 xl:px-3.5 xl:py-2.5 rounded-xl text-xs xl:text-sm font-bold hover:shadow-md hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-0.5 border border-white/10 whitespace-nowrap"
               >
                 <Phone className="w-3.5 h-3.5 fill-white group-hover:animate-bounce" />
                 <span className="hidden xl:inline">+91 86376 07910</span>
@@ -231,7 +231,7 @@ export default function Header() {
                 href="https://wa.me/918637607910?text=Hi%20Sravani%20Netting%20Solutions%2C%20I%20am%20interested%20in%20a%20free%20inspection%20and%20quote%20for%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center space-x-1.5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-2.5 py-2 xl:px-3.5 xl:py-2.5 rounded-xl text-xs xl:text-sm font-bold hover:shadow-md hover:shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 border border-white/10 whitespace-nowrap"
+                className="group flex items-center space-x-1.5 bg-accent hover:bg-accent-dark text-white px-2.5 py-2 xl:px-3.5 xl:py-2.5 rounded-xl text-xs xl:text-sm font-bold hover:shadow-md hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-0.5 border border-white/10 whitespace-nowrap"
               >
                 <div className="relative flex h-2 w-2 mr-0.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -250,7 +250,7 @@ export default function Header() {
             <div className="lg:hidden flex items-center space-x-2">
               <a
                 href="tel:+918637607910"
-                className="w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:opacity-95 shadow-md transition-all active:scale-95"
+                className="w-11 h-11 flex items-center justify-center rounded-xl bg-accent text-white hover:bg-accent-dark shadow-md transition-all active:scale-95"
                 aria-label="Call Customer Care"
               >
                 <Phone className="w-5 h-5 fill-white" />
@@ -299,7 +299,7 @@ export default function Header() {
                       onClick={(e) => handleNavClick(e, item.href)}
                       className={`block px-4 py-3 rounded-xl text-base font-bold transition-all ${
                         isActive 
-                          ? "text-primary bg-primary/5 border-l-4 border-accent pl-3" 
+                          ? "text-primary bg-primary/5 border-l-4 border-secondary pl-3" 
                           : "text-slate-700 hover:text-primary hover:bg-slate-50"
                       }`}
                     >
@@ -312,7 +312,7 @@ export default function Header() {
               <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100">
                 <a
                   href="tel:+918637607910"
-                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3.5 rounded-xl text-sm font-bold shadow-md hover:opacity-90 transition-all active:scale-98"
+                  className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3.5 rounded-xl text-sm font-bold shadow-md hover:opacity-90 transition-all active:scale-98"
                 >
                   <Phone className="w-4 h-4 fill-white" />
                   <span>Call Now</span>
@@ -321,7 +321,7 @@ export default function Header() {
                   href="https://wa.me/918637607910?text=Hi%20Sravani%20Netting%20Solutions%2C%20I%20am%20interested%20in%20a%20free%20inspection%20and%20quote%20for%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white py-3.5 rounded-xl text-sm font-bold shadow-md hover:opacity-90 transition-all active:scale-98"
+                  className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3.5 rounded-xl text-sm font-bold shadow-md hover:opacity-90 transition-all active:scale-98"
                 >
                   <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.381 9.805-9.786.002-2.618-1.01-5.074-2.854-6.921C16.38 2.052 13.933.996 11.999.996 6.596.996 2.197 5.379 2.195 10.785c-.001 1.512.409 2.99 1.182 4.298l-.994 3.63 3.731-.973-1.066.614zm11.332-6.52c-.274-.136-1.62-.8-1.87-.892-.252-.09-.435-.136-.617.137-.183.272-.708.892-.868 1.074-.16.183-.32.204-.593.068-1.579-.79-2.73-1.37-3.818-3.23-.288-.492.288-.456.822-1.52.091-.183.046-.343-.023-.48-.068-.136-.617-1.484-.846-2.033-.223-.536-.469-.463-.617-.47l-.527-.008c-.183 0-.48.069-.731.343-.252.274-.96.937-.96 2.285 0 1.348.982 2.651 1.119 2.833.137.183 1.933 2.951 4.682 4.141.654.282 1.165.451 1.564.578.658.209 1.258.18 1.732.109.528-.079 1.62-.663 1.85-1.302.23-.639.23-1.187.16-1.302-.07-.116-.275-.183-.55-.32z" />

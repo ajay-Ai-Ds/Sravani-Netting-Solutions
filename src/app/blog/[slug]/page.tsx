@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: Props) {
         
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-10 text-center">
-            <time className="text-sm font-bold text-primary tracking-wider uppercase mb-4 block">
+            <time className="text-sm font-bold text-secondary tracking-wider uppercase mb-4 block">
               {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </time>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 font-display mb-6">
@@ -112,21 +112,21 @@ export default async function BlogPostPage({ params }: Props) {
           </header>
 
           <div 
-            className="prose prose-slate prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-light prose-img:rounded-xl"
+            className="prose prose-slate prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-secondary hover:prose-a:text-secondary-dark prose-img:rounded-xl"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
           {/* Call To Action Box */}
-          <div className="mt-12 p-8 bg-slate-900 text-white rounded-3xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="mt-12 p-8 bg-[#002957] text-white rounded-3xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/10">
             <div>
-              <h3 className="text-2xl font-bold font-display text-amber-400">Need Installation in Chennai?</h3>
+              <h3 className="text-2xl font-bold font-display text-secondary-light">Need Installation in Chennai?</h3>
               <p className="text-slate-300 mt-1 text-sm">Get free site measurement & same-day installation from Sravani Netting Solutions.</p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <a href="tel:+918637607910" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
+              <a href="tel:+918637607910" className="bg-accent hover:bg-accent-dark text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
                 Call Now
               </a>
-              <a href="https://wa.me/918637607910" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
+              <a href="https://wa.me/918637607910" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-accent-dark text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
                 WhatsApp
               </a>
             </div>
@@ -147,7 +147,7 @@ export default async function BlogPostPage({ params }: Props) {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <h4 className="font-bold text-lg text-slate-900 group-hover:text-primary transition-colors line-clamp-2">
+                  <h4 className="font-bold text-lg text-slate-900 group-hover:text-secondary transition-colors line-clamp-2">
                     {relatedPost.title}
                   </h4>
                 </Link>

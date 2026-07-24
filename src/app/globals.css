@@ -3,14 +3,24 @@
 
 @theme {
   --color-primary: #003d82;
-  --color-primary-light: #00bcd4;
-  --color-primary-dark: #002654;
-  --color-accent: #ffc107; /* Gold Accent */
-  --color-accent-dark: #d97706;
-  --color-call-red: #d97706; /* Gold CTA */
-  --color-call-red-hover: #b45309;
-  --color-text-dark: #0f172a;
+  --color-primary-light: #1d68c4;
+  --color-primary-dark: #002957;
+  
+  --color-secondary: #1a7d76;
+  --color-secondary-light: #229c93;
+  --color-secondary-dark: #14635d;
+  
+  --color-accent: #ff6b35; /* Orange CTA */
+  --color-accent-light: #ff8555;
+  --color-accent-dark: #e05522;
+  --color-accent-hover: #e05522;
+  
+  --color-call-red: #ff6b35; /* Orange CTA */
+  --color-call-red-hover: #e05522;
+  
+  --color-text-dark: #1a202c;
   --color-text-light: #f8fafc;
+  --color-bg-light: #f8fafc;
   
   --font-sans: var(--font-sans), sans-serif;
   --font-display: var(--font-display), sans-serif;

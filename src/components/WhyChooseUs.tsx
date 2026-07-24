@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
           
           {/* Left Column: Heading & Callout */}
           <div className="lg:col-span-5 space-y-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary-light">
               Unmatched Standards
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display leading-tight">
@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
             {/* Graphic Trust Banner */}
             <div className="glass-card-dark rounded-2xl p-6 border border-white/10 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-accent/25 flex items-center justify-center text-accent">
+                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary-light">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary-light/25 flex items-center justify-center text-primary-light">
+                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary-light">
                   <Zap className="w-6 h-6" />
                 </div>
                 <div>
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
             <div className="pt-2">
               <a
                 href="tel:+918637607910"
-                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-slate-900 font-bold py-3 px-6 rounded-lg text-sm transition-all shadow-md"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold py-3 px-6 rounded-lg text-sm transition-all shadow-md"
               >
                 <PhoneCall className="w-4 h-4 fill-white" />
                 <span>Call +91 86376 07910</span>
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
                   transition={{ delay: index * 0.05, duration: 0.3 }}
                   className="flex items-start space-x-3 bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl p-4 transition-colors"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-secondary-light shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-bold text-sm sm:text-base text-white font-display">
                       {benefit.title}

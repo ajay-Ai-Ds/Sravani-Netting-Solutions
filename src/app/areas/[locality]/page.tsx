@@ -238,12 +238,12 @@ export default async function LocalityPage({ params }: { params: Promise<{ local
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/areas" className="text-primary hover:underline font-semibold mb-8 inline-block">
+        <Link href="/areas" className="text-secondary hover:underline font-semibold mb-8 inline-block">
           &larr; Back to All Areas
         </Link>
         
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
-          <span className="text-accent font-bold tracking-widest uppercase text-sm">
+          <span className="text-secondary font-bold tracking-widest uppercase text-sm">
             Service Area
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mt-4 mb-8">
@@ -258,7 +258,7 @@ export default async function LocalityPage({ params }: { params: Promise<{ local
             ))}
           </div>
           
-          <div className="bg-slate-900 rounded-2xl p-8 text-center text-white">
+          <div className="bg-[#002957] rounded-2xl p-8 text-center text-white border border-white/10">
             <h3 className="text-2xl font-bold font-display mb-4">
               Need an installation in {data.name}?
             </h3>
@@ -266,10 +266,10 @@ export default async function LocalityPage({ params }: { params: Promise<{ local
               Call us now for a free measurement and quote. We offer same-day service across {data.name}.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="tel:+918637607910" className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
+              <a href="tel:+918637607910" className="bg-accent hover:bg-accent-dark text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
                 Call +91 86376 07910
               </a>
-              <a href="https://wa.me/918637607910" className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
+              <a href="https://wa.me/918637607910" className="bg-accent hover:bg-accent-dark text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
                 WhatsApp Us
               </a>
             </div>
