@@ -1,19 +1,19 @@
 import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Trust from "@/components/Trust";
-import Services from "@/components/Services";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Process from "@/components/Process";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import FloatingCTAs from "@/components/FloatingCTAs";
 
-// Defer non-critical below-the-fold components
+// Defer below-the-fold components to minimize initial JavaScript bundle & TBT on mobile
+const Trust = dynamic(() => import("@/components/Trust"));
+const Services = dynamic(() => import("@/components/Services"));
+const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs"));
 const Gallery = dynamic(() => import("@/components/Gallery"));
+const Process = dynamic(() => import("@/components/Process"));
 const Reviews = dynamic(() => import("@/components/Reviews"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
 const BlogSection = dynamic(() => import("@/components/BlogSection"));
+const Contact = dynamic(() => import("@/components/Contact"));
+const Footer = dynamic(() => import("@/components/Footer"));
+const FloatingCTAs = dynamic(() => import("@/components/FloatingCTAs"));
 const Popups = dynamic(() => import("@/components/Popups"));
 
 export default function Home() {

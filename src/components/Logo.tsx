@@ -32,6 +32,7 @@ export default function Logo({
           fill
           className="object-contain"
           priority
+          sizes="(max-width: 640px) 160px, 200px"
         />
       </div>
     </div>
