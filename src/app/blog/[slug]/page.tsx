@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: "Sravani Netting Solutions",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.sravaninettingsolutions.com/images/logo_dark.png"
+        url: "https://www.sravaninettingsolutions.com/images/reallogo.webp"
       }
     },
     description: post.description
