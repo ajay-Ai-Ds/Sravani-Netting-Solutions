@@ -14,7 +14,7 @@ export const blogData: BlogPost[] = [
     title: "Balcony Safety Nets Installation in Chennai: Protection, Materials & Completed Projects",
     description: "Learn how balcony safety nets work, why high-density HDPE nets protect your family from accidental falls, key installation techniques, and recent completed projects across Chennai localities.",
     date: "2026-07-22",
-    image: "/images/balconysafetynet-blog.jpg",
+    image: "/images/balcony.webp",
     relatedSlugs: [
       "children-safety-nets-for-flats-chennai",
       "invisible-grills-vs-balcony-safety-nets-chennai",
@@ -87,7 +87,7 @@ export const blogData: BlogPost[] = [
     title: "Child Safety Nets for High-Rise Apartments in Chennai: How They Work & Real Locations Secured",
     description: "Discover how child safety nets safeguard your toddlers and kids in high-rise balconies and windows. Includes material specs, installation standards, and completed case studies in Chennai.",
     date: "2026-07-20",
-    image: "/images/childrensafetynet-blog.jpg",
+    image: "/images/carousel_child_safety.png",
     relatedSlugs: [
       "balcony-safety-nets-installation-guide-chennai",
       "best-child-safety-nets-for-high-rise-apartments-in-chennai",
