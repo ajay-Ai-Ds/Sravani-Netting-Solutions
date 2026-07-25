@@ -194,7 +194,7 @@ export default function RootLayout({
       <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans pb-[60px] md:pb-0 overflow-x-hidden">
         {/* Google tag (gtag.js) */}
         <Script 
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18291286869" 
+          src="https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87" 
           strategy="lazyOnload" 
         />
         <Script id="google-analytics" strategy="lazyOnload">
@@ -202,6 +202,8 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
+            gtag('config', 'G-HPZMZJCT87');
             gtag('config', 'AW-18291286869');
           `}
         </Script>
