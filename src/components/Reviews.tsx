@@ -156,16 +156,16 @@ export default function Reviews() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
             Customer Testimonials
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
             Google Reviews from Happy Customers
           </h2>
-          <p className="text-slate-600 mt-3 text-sm sm:text-base">
+          <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Read real feedback from homeowners across Chennai who secured their spaces with us.
           </p>
-          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Reviews Slider Container */}
@@ -178,38 +178,38 @@ export default function Reviews() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className="bg-slate-50 border border-slate-100 p-6 rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-300 h-[280px]"
+                className="bg-[#f9f9f9] border border-[#e5e5e5] p-6 rounded-2xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-300 h-[280px]"
               >
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Google Style Header */}
                   <div className="flex items-center space-x-3 mb-4 shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center font-display shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-[#e63946] text-white font-bold flex items-center justify-center font-display shadow-sm">
                       {rev.name.charAt(0)}
                     </div>
                     <div>
-                      <h3 className="font-bold text-sm text-slate-800">{rev.name}</h3>
-                      <p className="text-[11px] text-slate-600">{rev.location}</p>
+                      <h3 className="font-bold text-sm text-[#000000]">{rev.name}</h3>
+                      <p className="text-[11px] text-[#666666]">{rev.location}</p>
                     </div>
                   </div>
 
                   {/* Stars Rating */}
                   <div className="flex items-center space-x-1 mb-3 shrink-0">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 stroke-amber-400" />
+                      <Star key={i} className="w-4 h-4 fill-[#e63946] stroke-[#e63946]" />
                     ))}
-                    <span className="text-slate-400 text-xs ml-1.5">{rev.date}</span>
+                    <span className="text-slate-500 text-xs ml-1.5">{rev.date}</span>
                   </div>
 
                   {/* Review Text */}
                   <div className="overflow-y-auto pr-1 flex-1 min-h-0">
-                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed italic">
+                    <p className="text-[#000000] text-xs sm:text-sm leading-relaxed italic">
                       &ldquo;{rev.text}&rdquo;
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-slate-400 text-xs">
-                  <MessageSquare className="w-3.5 h-3.5 mr-1" />
+                <div className="mt-4 pt-4 border-t border-[#e5e5e5] flex items-center text-slate-500 text-xs">
+                  <MessageSquare className="w-3.5 h-3.5 mr-1 text-[#e63946]" />
                   <span>Posted on Google Local Business</span>
                 </div>
               </motion.div>
@@ -226,7 +226,7 @@ export default function Reviews() {
                 aria-label={`Go to slide ${i + 1}`}
               >
                 <span className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentIndex === i ? "bg-primary w-6" : "bg-slate-300 group-hover:bg-slate-400"
+                  currentIndex === i ? "bg-[#e63946] w-6" : "bg-slate-300 group-hover:bg-[#e63946]/50"
                 }`} />
               </button>
             ))}
@@ -235,16 +235,16 @@ export default function Reviews() {
 
         {/* Global Summary Badge */}
         <div className="mt-12 text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-slate-50 border border-slate-100 px-6 py-3.5 rounded-full text-sm font-semibold shadow-sm">
-            <span className="text-slate-700">Overall Google Rating:</span>
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-[#e63946] text-white px-6 py-3.5 rounded-full text-sm font-semibold shadow-md border border-[#e63946]">
+            <span>Overall Google Rating:</span>
             <div className="flex items-center gap-1.5">
-              <span className="text-slate-900 font-extrabold text-base">4.9 / 5.0</span>
-              <div className="flex text-amber-400">
+              <span className="font-extrabold text-base text-white">5.0 / 5.0</span>
+              <div className="flex text-white">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4.5 h-4.5 fill-amber-400 stroke-amber-400" />
+                  <Star key={i} className="w-4.5 h-4.5 fill-white stroke-white" />
                 ))}
               </div>
-              <span className="text-slate-600 font-normal">(1,248+ customer ratings)</span>
+              <span className="text-white/90 font-normal">(1000+ Happy Clients)</span>
             </div>
           </div>
         </div>

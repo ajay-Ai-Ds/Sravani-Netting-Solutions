@@ -111,18 +111,18 @@ export default function Popups() {
             className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 z-10"
           >
             {/* Header / Offer Banner */}
-            <div className="bg-primary text-white p-5 pr-12 relative">
-              <h2 className="font-bold text-xl font-display leading-tight">
+            <div className="bg-[#e63946] text-white p-5 pr-12 relative border-b border-[#dc2626]">
+              <h2 className="font-bold text-xl font-display leading-tight text-white">
                 {formType === "exit" 
                   ? "Wait! Get a Free Inspection Today 🏷️" 
                   : "Book Free Site Inspection & Quote"}
               </h2>
-              <p className="text-blue-100 text-xs mt-1">
+              <p className="text-white/90 text-xs mt-1">
                 Same Day Service. Premium UV-Resistant Nets & Professional Fitting.
               </p>
               <button
                 onClick={closePopup}
-                className="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-1.5 rounded-lg transition-colors"
+                className="absolute top-4 right-4 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 p-1.5 rounded-lg transition-colors border border-white/20"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
@@ -130,11 +130,11 @@ export default function Popups() {
             </div>
 
             {/* Content Area */}
-            <div className="p-6">
+            <div className="p-6 bg-white">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="popup-name" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-name" className="block text-xs font-semibold text-[#000000] uppercase tracking-wider mb-1">
                       Your Name *
                     </label>
                     <input
@@ -144,12 +144,12 @@ export default function Popups() {
                       placeholder="Enter your name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="popup-phone" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-phone" className="block text-xs font-semibold text-[#000000] uppercase tracking-wider mb-1">
                       Phone Number *
                     </label>
                     <input
@@ -159,19 +159,19 @@ export default function Popups() {
                       placeholder="Enter 10-digit phone number"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="popup-service" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-service" className="block text-xs font-semibold text-[#000000] uppercase tracking-wider mb-1">
                       Service Needed
                     </label>
                     <select
                       id="popup-service"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm bg-white text-[#000000] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
                     >
                       {servicesList.map((srv) => (
                         <option key={srv} value={srv}>
@@ -182,7 +182,7 @@ export default function Popups() {
                   </div>
 
                   <div>
-                    <label htmlFor="popup-message" className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">
+                    <label htmlFor="popup-message" className="block text-xs font-semibold text-[#000000] uppercase tracking-wider mb-1">
                       Message (Optional)
                     </label>
                     <textarea
@@ -191,38 +191,38 @@ export default function Popups() {
                       placeholder="Any specific instructions..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all resize-none"
                     />
                   </div>
 
                   {/* Trust Factors inside popup */}
-                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-1">
+                  <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-700 pt-1">
                     <span className="flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-[#e63946] rounded-full"></span>
                       <span>Same-Day Inspection</span>
                     </span>
                     <span className="flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-[#e63946] rounded-full"></span>
                       <span>No Obligation Quote</span>
                     </span>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-slate-900 py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98"
+                    className="w-full bg-[#e63946] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 border border-[#e63946]"
                   >
-                    <Send className="w-4 h-4 fill-slate-900" />
+                    <Send className="w-4 h-4 fill-white" />
                     <span>Get Free Quote Now</span>
                   </button>
 
                   <div className="text-center pt-1">
-                    <span className="text-xs text-slate-400">Or connect instantly via</span>
+                    <span className="text-xs text-slate-500">Or connect instantly via</span>
                     <div className="flex justify-center space-x-4 mt-2">
                       <a
                         href="tel:+918637607910"
-                        className="flex items-center space-x-1 text-primary hover:text-primary-light font-bold text-xs"
+                        className="flex items-center space-x-1 text-[#e63946] hover:text-[#dc2626] font-bold text-xs"
                       >
-                        <Phone className="w-3 h-3 fill-primary" />
+                        <Phone className="w-3 h-3 fill-[#e63946]" />
                         <span>Call +91 86376 07910</span>
                       </a>
                     </div>
@@ -230,9 +230,9 @@ export default function Popups() {
                 </form>
               ) : (
                 <div className="py-8 flex flex-col items-center justify-center text-center space-y-3">
-                  <CheckCircle className="w-16 h-16 text-accent animate-bounce" />
-                  <h3 className="font-bold text-lg text-slate-800 font-display">Enquiry Submitted!</h3>
-                  <p className="text-sm text-slate-600 max-w-xs">
+                  <CheckCircle className="w-16 h-16 text-[#e63946] animate-bounce" />
+                  <h3 className="font-bold text-lg text-[#000000] font-display">Enquiry Submitted!</h3>
+                  <p className="text-sm text-slate-700 max-w-xs">
                     Thank you. Our executive will call you in the next 15 minutes to schedule the visit.
                   </p>
                 </div>

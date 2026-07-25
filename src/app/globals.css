@@ -2,15 +2,17 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-primary: #003d82;
-  --color-primary-light: #00bcd4;
-  --color-primary-dark: #002654;
-  --color-accent: #ffc107; /* Gold Accent */
-  --color-accent-dark: #d97706;
-  --color-call-red: #d97706; /* Gold CTA */
-  --color-call-red-hover: #b45309;
-  --color-text-dark: #0f172a;
-  --color-text-light: #f8fafc;
+  --color-primary: #e63946;
+  --color-primary-light: #f9f9f9;
+  --color-primary-dark: #dc2626;
+  --color-secondary: #000000;
+  --color-accent: #e63946;
+  --color-accent-dark: #dc2626;
+  --color-call-red: #e63946;
+  --color-call-red-hover: #dc2626;
+  --color-text-dark: #000000;
+  --color-text-light: #ffffff;
+  --color-border: #e5e5e5;
   
   --font-sans: var(--font-sans), sans-serif;
   --font-display: var(--font-display), sans-serif;

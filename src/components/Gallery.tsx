@@ -111,16 +111,16 @@ export default function Gallery() {
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
             Our Work Showcase
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
             Completed Projects Gallery
           </h2>
-          <p className="text-slate-600 mt-3 text-sm sm:text-base">
+          <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Take a look at some of our premium safety net and invisible grill installations across Chennai.
           </p>
-          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
         </div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-10">
@@ -131,10 +131,10 @@ export default function Gallery() {
                 setActiveFilter(cat);
                 setLightboxIndex(null);
               }}
-              className={`px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[48px] ${
+              className={`px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[48px] border ${
                 activeFilter === cat
-                  ? "bg-primary text-white shadow-sm"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-800"
+                  ? "bg-[#e63946] text-white border-[#e63946] shadow-sm"
+                  : "bg-[#f9f9f9] text-slate-800 border-[#e5e5e5] hover:bg-[#e63946] hover:text-white hover:border-[#e63946]"
               }`}
             >
               {cat}
@@ -148,7 +148,7 @@ export default function Gallery() {
             return (
               <button
                 key={item.id}
-                className="relative group rounded-2xl overflow-hidden aspect-[4/3] w-full bg-slate-100 shadow-sm cursor-pointer hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 text-left"
+                className="relative group rounded-2xl overflow-hidden aspect-[4/3] w-full bg-slate-100 border border-[#e5e5e5] shadow-sm cursor-pointer hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:ring-offset-2 text-left"
                 onClick={() => openLightbox(index)}
                 aria-label={`View larger image of ${item.title}`}
               >
@@ -162,9 +162,9 @@ export default function Gallery() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 
-                {/* Black Overlay on Hover */}
-                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                  <span className="text-white/80 text-[10px] uppercase font-bold tracking-wider mb-1">
+                {/* Red Semi-Transparent Overlay on Hover */}
+                <div className="absolute inset-0 bg-[#e63946]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                  <span className="text-white/90 text-[10px] uppercase font-bold tracking-wider mb-1">
                     {item.category}
                   </span>
                   <h3 className="text-white font-bold text-sm sm:text-base font-display">
@@ -183,12 +183,12 @@ export default function Gallery() {
       {/* Full Screen Lightbox Modal */}
       <AnimatePresence>
         {lightboxIndex !== null && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-sm select-none p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm select-none p-4">
             
             {/* Close button */}
             <button
               onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 flex items-center justify-center rounded-lg transition-colors z-20 cursor-pointer"
+              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 flex items-center justify-center rounded-lg transition-colors z-20 cursor-pointer"
               aria-label="Close Lightbox"
             >
               <X className="w-6 h-6" />
@@ -197,7 +197,7 @@ export default function Gallery() {
             {/* Left navigation arrow */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 sm:left-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute left-4 sm:left-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -225,7 +225,7 @@ export default function Gallery() {
             {/* Right navigation arrow */}
             <button
               onClick={handleNext}
-              className="absolute right-4 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute right-4 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
               aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -233,10 +233,10 @@ export default function Gallery() {
 
             {/* Caption Banner */}
             <div className="absolute bottom-6 left-0 w-full text-center text-white z-20">
-              <span className="text-accent text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+              <span className="text-[#e63946] text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-black/60 px-3 py-1 rounded-full border border-[#e63946]/40">
                 {filteredItems[lightboxIndex].category}
               </span>
-              <h4 className="text-base sm:text-xl font-bold font-display mt-0.5">
+              <h4 className="text-base sm:text-xl font-bold font-display mt-2">
                 {filteredItems[lightboxIndex].title}
               </h4>
               <p className="text-slate-400 text-xs mt-1">

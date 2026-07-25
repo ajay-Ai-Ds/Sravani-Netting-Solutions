@@ -89,8 +89,8 @@ export default function Trust() {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Decorative Blur Backgrounds */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-slate-100 rounded-full blur-3xl pointer-events-none opacity-60"></div>
-      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-blue-50 rounded-full blur-3xl pointer-events-none opacity-60"></div>
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#e63946]/5 rounded-full blur-3xl pointer-events-none opacity-60"></div>
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-[#e63946]/5 rounded-full blur-3xl pointer-events-none opacity-60"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -100,7 +100,7 @@ export default function Trust() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-primary-light"
+            className="text-xs font-bold uppercase tracking-widest text-[#e63946]"
           >
             Why Sravani Netting Solutions
           </motion.span>
@@ -109,7 +109,7 @@ export default function Trust() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display"
+            className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display"
           >
             {"Chennai's Most Trusted Protection Services"}
           </motion.h2>
@@ -117,7 +117,7 @@ export default function Trust() {
             initial={{ width: 0 }}
             whileInView={{ width: 60 }}
             viewport={{ once: true }}
-            className="h-1 bg-accent mx-auto mt-4 rounded"
+            className="h-1 bg-[#e63946] mx-auto mt-4 rounded"
           />
         </div>
 
@@ -142,18 +142,18 @@ export default function Trust() {
                   key={index}
                   variants={cardVariants}
                   whileHover={{ y: -6, boxShadow: "0 12px 20px -8px rgba(0,0,0,0.08)" }}
-                  className="bg-slate-50 border border-slate-100 rounded-2xl p-6 transition-all duration-300 relative group flex-shrink-0 w-[290px] snap-start"
+                  className="bg-[#f9f9f9] border border-[#e5e5e5] rounded-2xl p-6 transition-all duration-300 relative group flex-shrink-0 w-[290px] snap-start"
                 >
                   {/* Accent glow on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#e63946]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-4 border border-slate-100 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[#e63946] mb-4 border border-[#e5e5e5] group-hover:scale-105 transition-transform duration-300">
                     <Icon className="w-6 h-6 stroke-[2]" />
                   </div>
-                  <h3 className="font-bold text-lg text-slate-800 mb-2 font-display">
+                  <h3 className="font-bold text-lg text-[#000000] mb-2 font-display">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-slate-700 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -164,7 +164,7 @@ export default function Trust() {
           {/* Scroll Buttons */}
           <button 
             onClick={() => scroll("left")}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white border border-slate-200 rounded-full shadow-md items-center justify-center text-slate-600 hover:text-primary hover:bg-slate-50 transition-all focus:outline-none -ml-5 opacity-0 group-hover/scroll:opacity-100"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white border border-[#e5e5e5] rounded-full shadow-md items-center justify-center text-slate-700 hover:text-[#e63946] hover:bg-slate-50 transition-all focus:outline-none -ml-5 opacity-0 group-hover/scroll:opacity-100"
             aria-label="Scroll Left"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -172,7 +172,7 @@ export default function Trust() {
           
           <button 
             onClick={() => scroll("right")}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white border border-slate-200 rounded-full shadow-md items-center justify-center text-slate-600 hover:text-primary hover:bg-slate-50 transition-all focus:outline-none -mr-5 opacity-0 group-hover/scroll:opacity-100"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white border border-[#e5e5e5] rounded-full shadow-md items-center justify-center text-slate-700 hover:text-[#e63946] hover:bg-slate-50 transition-all focus:outline-none -mr-5 opacity-0 group-hover/scroll:opacity-100"
             aria-label="Scroll Right"
           >
             <ChevronRight className="w-5 h-5" />

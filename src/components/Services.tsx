@@ -155,26 +155,26 @@ export default function Services() {
     )}.`;
 
   return (
-    <section id="services" className="py-20 bg-slate-50 relative">
+    <section id="services" className="py-20 bg-[#ffffff] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
             Our Services
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
             High-Quality Safety & Space Solutions
           </h2>
-          <p className="text-slate-600 mt-3 text-sm sm:text-base">
+          <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Protect your home, block pigeons, and save space with our premium installations. Click on any service to learn details.
           </p>
-          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Tab Buttons */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white p-1.5 rounded-2xl shadow-sm border border-slate-100 flex space-x-1" role="tablist" aria-label="Services Categories">
+          <div className="bg-[#f9f9f9] p-1.5 rounded-2xl shadow-sm border border-[#e5e5e5] flex space-x-1" role="tablist" aria-label="Services Categories">
             {(Object.keys(servicesData) as Array<"nets" | "grills" | "hangers">).map((key) => (
               <button
                 key={key}
@@ -185,8 +185,8 @@ export default function Services() {
                 onClick={() => setActiveTab(key)}
                 className={`px-5 py-3.5 rounded-xl text-sm font-bold transition-all duration-300 relative cursor-pointer min-h-[48px] ${
                   activeTab === key
-                    ? "bg-primary text-white shadow-md"
-                    : "text-slate-600 hover:text-primary hover:bg-slate-50"
+                    ? "bg-[#e63946] text-white shadow-md"
+                    : "text-slate-700 hover:text-[#e63946] hover:bg-slate-100"
                 }`}
               >
                 {servicesData[key].title}
@@ -217,7 +217,7 @@ export default function Services() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col group hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl shadow-md border border-[#e5e5e5] overflow-hidden flex flex-col group hover:shadow-xl hover:border-[#e63946] transition-all duration-300"
               >
                 <div className="relative h-64 w-full overflow-hidden bg-slate-100">
                   <Image
@@ -231,7 +231,7 @@ export default function Services() {
                   />
                   <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                     {item.tags.slice(0, 2).map((tg) => (
-                      <span key={tg} className="bg-slate-900/85 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      <span key={tg} className="bg-[#e63946] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
                         {tg}
                       </span>
                     ))}
@@ -241,13 +241,13 @@ export default function Services() {
                 {/* Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-bold text-xl text-slate-900 font-display mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-xl text-[#000000] font-display mb-3 group-hover:text-[#e63946] transition-colors">
                       {item.name}
                     </h3>
                     <ul className="space-y-2 mb-6">
                       {item.bulletPoints.map((pt, i) => (
-                        <li key={i} className="flex items-start text-slate-600 text-xs sm:text-sm">
-                          <Check className="w-4.5 h-4.5 text-accent shrink-0 mr-2 mt-0.5" />
+                        <li key={i} className="flex items-start text-slate-700 text-xs sm:text-sm">
+                          <Check className="w-4.5 h-4.5 text-[#e63946] shrink-0 mr-2 mt-0.5" />
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -258,7 +258,7 @@ export default function Services() {
                   <div className="space-y-3">
                     <button
                       onClick={() => setSelectedService(item)}
-                      className="w-full flex items-center justify-center space-x-1.5 py-3 border border-slate-200 hover:border-primary text-slate-700 hover:text-primary font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
+                      className="w-full flex items-center justify-center space-x-1.5 py-3 bg-[#f9f9f9] border border-[#e63946] text-[#e63946] hover:bg-[#e63946] hover:text-white font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
                     >
                       <Info className="w-4 h-4" />
                       <span>Learn Technical Details</span>
@@ -267,7 +267,7 @@ export default function Services() {
                     <div className="grid grid-cols-2 gap-2">
                       <a
                         href="tel:+918637607910"
-                        className="flex items-center justify-center space-x-1 bg-primary text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-primary-light transition-colors min-h-[48px]"
+                        className="flex items-center justify-center space-x-1 bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#e63946] min-h-[48px]"
                       >
                         <Phone className="w-3.5 h-3.5 fill-white" />
                         <span>Call</span>
@@ -276,9 +276,9 @@ export default function Services() {
                         href={whatsappUrl(item.name)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center space-x-1 bg-accent text-slate-900 py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-accent-dark transition-colors min-h-[48px]"
+                        className="flex items-center justify-center space-x-1 bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#e63946] min-h-[48px]"
                       >
-                        <MessageCircle className="w-3.5 h-3.5 fill-slate-900" />
+                        <MessageCircle className="w-3.5 h-3.5 fill-white" />
                         <span>WhatsApp</span>
                       </a>
                     </div>
@@ -291,15 +291,15 @@ export default function Services() {
         </motion.div>
 
         {/* Section CTA */}
-        <div className="mt-12 text-center bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
+        <div className="mt-12 text-center bg-[#000000] text-white rounded-2xl p-6 sm:p-8 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border border-[#333333]">
           <div className="text-left">
-            <h3 className="text-lg sm:text-xl font-bold font-display">Need custom sizing or help?</h3>
+            <h3 className="text-lg sm:text-xl font-bold font-display text-white">Need custom sizing or help?</h3>
             <p className="text-slate-300 text-xs sm:text-sm mt-1">Book a free inspection. No charges for measurements or visits.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <a
               href="tel:+918637607910"
-              className="bg-white text-slate-900 hover:bg-slate-100 py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
+              className="bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#e63946]"
             >
               📞 Call +91 86376 07910
             </a>
@@ -307,7 +307,7 @@ export default function Services() {
               href={whatsappUrl("General Inquiry")}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent-dark text-slate-900 py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
+              className="bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#e63946]"
             >
               💬 WhatsApp Quote
             </a>
@@ -326,14 +326,14 @@ export default function Services() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedService(null)}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             />
             {/* Modal Box */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden z-10 border border-slate-100"
+              className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden z-10 border border-[#e5e5e5]"
             >
               <div className="relative h-72 w-full">
                 <Image
@@ -345,16 +345,16 @@ export default function Services() {
                   sizes="(max-width: 768px) 100vw, 800px"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <button
                   onClick={() => setSelectedService(null)}
-                  className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 w-12 h-12 flex items-center justify-center rounded-lg text-white transition-colors cursor-pointer"
+                  className="absolute top-4 right-4 bg-black/40 hover:bg-black/70 w-12 h-12 flex items-center justify-center rounded-lg text-white transition-colors cursor-pointer border border-white/20"
                   aria-label="Close modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
                 <div className="absolute bottom-4 left-6 pr-6">
-                  <span className="bg-accent text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  <span className="bg-[#e63946] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                     {selectedService.tags[0]}
                   </span>
                   <h3 className="text-2xl font-bold text-white font-display mt-1">
@@ -363,34 +363,34 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="p-6 space-y-4">
-                <p className="text-slate-600 text-sm leading-relaxed">
+              <div className="p-6 space-y-4 bg-white text-[#000000]">
+                <p className="text-slate-700 text-sm leading-relaxed">
                   {selectedService.description}
                 </p>
 
-                <div className="border-t border-slate-100 pt-4 space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                    <ShieldCheck className="w-4 h-4 text-primary" />
+                <div className="border-t border-[#e5e5e5] pt-4 space-y-3">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#000000] uppercase tracking-wide">
+                    <ShieldCheck className="w-4 h-4 text-[#e63946]" />
                     <span>Quality Specifications</span>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 text-slate-600 text-xs sm:text-sm">
+                  <div className="grid grid-cols-2 gap-2 text-slate-700 text-xs sm:text-sm">
                     {selectedService.tags.map((tg: string) => (
                       <span key={tg} className="flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                        <span className="w-1.5 h-1.5 bg-[#e63946] rounded-full"></span>
                         {tg}
                       </span>
                     ))}
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-[#e63946] rounded-full"></span>
                       Anti-Sag Twine
                     </span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-[#e5e5e5]">
                   <a
                     href="tel:+918637607910"
-                    className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-md hover:bg-primary-light min-h-[48px]"
+                    className="flex items-center justify-center space-x-2 bg-[#e63946] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold shadow-md transition-colors border border-[#e63946] min-h-[48px]"
                   >
                     <Phone className="w-4 h-4 fill-white" />
                     <span>Call to Order</span>
@@ -399,9 +399,9 @@ export default function Services() {
                     href={whatsappUrl(selectedService.name)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 bg-accent text-slate-900 py-3 rounded-lg text-sm font-bold shadow-md hover:bg-accent-dark min-h-[48px]"
+                    className="flex items-center justify-center space-x-2 bg-[#e63946] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold shadow-md transition-colors border border-[#e63946] min-h-[48px]"
                   >
-                    <MessageCircle className="w-4 h-4 fill-slate-900" />
+                    <MessageCircle className="w-4 h-4 fill-white" />
                     <span>Send Message</span>
                   </a>
                 </div>

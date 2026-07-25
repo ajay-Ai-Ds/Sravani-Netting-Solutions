@@ -232,44 +232,44 @@ export default async function LocalityPage({ params }: { params: Promise<{ local
   };
 
   return (
-    <main className="py-32 bg-slate-50 min-h-screen">
+    <main className="py-32 bg-[#f9f9f9] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/areas" className="text-primary hover:underline font-semibold mb-8 inline-block">
+        <Link href="/areas" className="text-[#e63946] hover:text-[#dc2626] font-semibold mb-8 inline-block">
           &larr; Back to All Areas
         </Link>
         
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
-          <span className="text-accent font-bold tracking-widest uppercase text-sm">
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-[#e5e5e5]">
+          <span className="text-[#e63946] font-bold tracking-widest uppercase text-sm">
             Service Area
           </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 font-display mt-4 mb-8">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-[#000000] font-display mt-4 mb-8">
             Safety Nets in {data.name}
           </h1>
           
           <div className="prose prose-lg prose-slate max-w-none mb-12 space-y-6">
             {data.content.trim().split('\n\n').map((paragraph, idx) => (
-              <p key={idx} className="text-slate-600 leading-relaxed">
+              <p key={idx} className="text-slate-700 leading-relaxed">
                 {paragraph.trim()}
               </p>
             ))}
           </div>
           
-          <div className="bg-slate-900 rounded-2xl p-8 text-center text-white">
-            <h3 className="text-2xl font-bold font-display mb-4">
+          <div className="bg-[#000000] rounded-2xl p-8 text-center text-white border border-[#333333]">
+            <h3 className="text-2xl font-bold font-display mb-4 text-white">
               Need an installation in {data.name}?
             </h3>
             <p className="text-slate-300 mb-6">
               Call us now for a free measurement and quote. We offer same-day service across {data.name}.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="tel:+918637607910" className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
+              <a href="tel:+918637607910" className="bg-[#e63946] hover:bg-[#dc2626] text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
                 Call +91 86376 07910
               </a>
-              <a href="https://wa.me/918637607910" className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto">
+              <a href="https://wa.me/918637607910" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold py-3 px-8 rounded-xl transition-colors w-full sm:w-auto border border-white/20">
                 WhatsApp Us
               </a>
             </div>

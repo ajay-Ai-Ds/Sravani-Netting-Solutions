@@ -69,7 +69,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-slate-50 relative">
+    <section id="faq" className="py-20 bg-[#f9f9f9] relative">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -79,16 +79,16 @@ export default function FAQ() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
             Frequently Asked Questions
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
             Got Questions? We Have Answers
           </h2>
-          <p className="text-slate-600 mt-3 text-sm sm:text-base">
+          <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Read through our top 10 detailed FAQs to learn everything about installation, durability, and cost in Chennai.
           </p>
-          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Accordion List */}
@@ -96,7 +96,7 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white border border-slate-150 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-white border border-[#e5e5e5] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               {/* Accordion Trigger */}
               <button
@@ -104,15 +104,15 @@ export default function FAQ() {
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
-                className="w-full flex items-center justify-between p-5 text-left text-slate-800 hover:text-primary font-bold text-sm sm:text-base font-display transition-colors duration-200 cursor-pointer"
+                className="w-full flex items-center justify-between p-5 text-left text-[#000000] hover:text-[#e63946] font-bold text-sm sm:text-base font-display transition-colors duration-200 cursor-pointer"
               >
                 <span className="flex items-center space-x-3 pr-4">
-                  <HelpCircle className="w-5 h-5 text-primary shrink-0" />
+                  <HelpCircle className="w-5 h-5 text-[#e63946] shrink-0" />
                   <span>{faq.q}</span>
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${
-                    activeIndex === index ? "rotate-185 text-primary" : ""
+                    activeIndex === index ? "rotate-185 text-[#e63946]" : ""
                   }`}
                 />
               </button>
@@ -130,7 +130,7 @@ export default function FAQ() {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-50 pl-13">
+                    <div className="px-5 pb-5 pt-1 text-slate-700 text-xs sm:text-sm leading-relaxed border-t border-[#e5e5e5] pl-13">
                       {faq.a}
                     </div>
                   </motion.div>
@@ -141,13 +141,13 @@ export default function FAQ() {
         </div>
 
         {/* FAQ CTA */}
-        <div className="text-center mt-12 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-          <p className="text-slate-600 text-xs sm:text-sm">
+        <div className="text-center mt-12 bg-white rounded-2xl p-6 border border-[#e5e5e5] shadow-sm">
+          <p className="text-slate-700 text-xs sm:text-sm">
             Still have an unanswered question? Call us directly for immediate support!
           </p>
           <a
             href="tel:+918637607910"
-            className="inline-flex items-center space-x-1.5 text-primary hover:text-primary-light font-bold text-sm sm:text-base mt-2"
+            className="inline-flex items-center space-x-1.5 text-[#e63946] hover:text-[#dc2626] font-bold text-sm sm:text-base mt-2"
           >
             <span>Call Customer Support:</span>
             <span className="underline">+91 86376 07910</span>

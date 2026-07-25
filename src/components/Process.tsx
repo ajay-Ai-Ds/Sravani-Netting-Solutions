@@ -60,21 +60,21 @@ const stepVariants = {
 
 export default function Process() {
   return (
-    <section className="py-20 bg-slate-50 relative overflow-hidden">
+    <section className="py-20 bg-[#f9f9f9] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
             Working Process
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
             How It Works in 5 Easy Steps
           </h2>
-          <p className="text-slate-600 mt-3 text-sm sm:text-base">
+          <p className="text-slate-700 mt-3 text-sm sm:text-base">
             From your first call to a fully secured home, we make the entire process quick and seamless.
           </p>
-          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Desktop timeline horizontal layout */}
@@ -95,21 +95,21 @@ export default function Process() {
               >
                 {/* Connecting arrows between items */}
                 {index < 4 && (
-                  <div className="absolute top-10 left-[calc(50%+45px)] w-[calc(100%-90px)] h-0.5 border-t-2 border-dashed border-slate-300 group-hover:border-primary-light transition-colors z-0" />
+                  <div className="absolute top-10 left-[calc(50%+45px)] w-[calc(100%-90px)] h-0.5 border-t-2 border-dashed border-slate-300 group-hover:border-[#e63946] transition-colors z-0" />
                 )}
 
                 {/* Step Circle with Icon */}
-                <div className="relative z-10 w-20 h-20 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center text-primary group-hover:border-primary group-hover:shadow-md transition-all duration-300">
-                  <div className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-accent text-slate-900 text-xs font-bold rounded-full flex items-center justify-center border-2 border-white">
+                <div className="relative z-10 w-20 h-20 bg-white rounded-2xl border border-[#e5e5e5] shadow-sm flex items-center justify-center text-[#e63946] group-hover:border-[#e63946] group-hover:shadow-md transition-all duration-300">
+                  <div className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-[#e63946] text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white">
                     {item.step}
                   </div>
                   <Icon className="w-9 h-9 stroke-[1.5]" />
                 </div>
 
-                <h3 className="font-bold text-lg text-slate-800 mt-6 mb-2 font-display">
+                <h3 className="font-bold text-lg text-[#000000] mt-6 mb-2 font-display">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 text-xs sm:text-sm px-2 leading-relaxed">
+                <p className="text-slate-700 text-xs sm:text-sm px-2 leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -126,7 +126,7 @@ export default function Process() {
           className="lg:hidden flex flex-col space-y-8 relative"
         >
           {/* Vertical connecting line */}
-          <div className="absolute top-8 left-8 bottom-8 w-0.5 border-l-2 border-dashed border-slate-200 z-0" />
+          <div className="absolute top-8 left-8 bottom-8 w-0.5 border-l-2 border-dashed border-[#e5e5e5] z-0" />
 
           {steps.map((item, index) => {
             const Icon = item.icon;
@@ -137,8 +137,8 @@ export default function Process() {
                 className="flex items-start space-x-4 relative z-10"
               >
                 {/* Step Circle with Icon */}
-                <div className="w-16 h-16 bg-white rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-primary shrink-0 relative">
-                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-accent text-slate-900 text-[10px] font-bold rounded-full flex items-center justify-center border border-white">
+                <div className="w-16 h-16 bg-white rounded-xl border border-[#e5e5e5] shadow-sm flex items-center justify-center text-[#e63946] shrink-0 relative">
+                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-[#e63946] text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-white">
                     {item.step}
                   </div>
                   <Icon className="w-7 h-7 stroke-[1.5]" />
@@ -146,10 +146,10 @@ export default function Process() {
 
                 {/* Text Content */}
                 <div className="pt-1.5">
-                  <h3 className="font-bold text-base text-slate-800 font-display">
+                  <h3 className="font-bold text-base text-[#000000] font-display">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm mt-1 leading-relaxed">
+                  <p className="text-slate-700 text-xs sm:text-sm mt-1 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
