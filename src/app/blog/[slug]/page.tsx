@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: Props) {
               <a href="tel:+918637607910" className="bg-[#e63946] hover:bg-[#dc2626] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
                 Call Now
               </a>
-              <a href="https://wa.me/918637607910" target="_blank" rel="noopener noreferrer" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md border border-white/20">
+              <a href="https://wa.me/918637607910" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md border border-[#25D366]">
                 WhatsApp
               </a>
             </div>

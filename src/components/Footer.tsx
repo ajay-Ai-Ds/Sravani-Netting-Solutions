@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://wa.me/918637607910?text=Hi%20Sravani%20Netting%20Solutions%2C%20I%20need%20more%20information%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e63946] hover:bg-[#dc2626] text-white transition-colors duration-200 border border-[#e63946]"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#1DA851] text-white transition-colors duration-200 border border-[#25D366]"
                 aria-label="WhatsApp Us"
               >
                 <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">

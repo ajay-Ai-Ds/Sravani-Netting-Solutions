@@ -276,7 +276,7 @@ export default function Services() {
                         href={whatsappUrl(item.name)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center space-x-1 bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#e63946] min-h-[48px]"
+                        className="flex items-center justify-center space-x-1 bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#25D366] min-h-[48px]"
                       >
                         <MessageCircle className="w-3.5 h-3.5 fill-white" />
                         <span>WhatsApp</span>
@@ -307,7 +307,7 @@ export default function Services() {
               href={whatsappUrl("General Inquiry")}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#e63946]"
+              className="bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#25D366]"
             >
               💬 WhatsApp Quote
             </a>

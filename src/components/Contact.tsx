@@ -96,7 +96,7 @@ export default function Contact() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 bg-[#dc2626] hover:bg-[#b91c1c] text-white py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98 border border-white/20"
+                className="flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#1DA851] text-white py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98 border border-[#25D366]"
               >
                 <MessageCircle className="w-5 h-5 fill-white" />
                 <span>WhatsApp Quote</span>
