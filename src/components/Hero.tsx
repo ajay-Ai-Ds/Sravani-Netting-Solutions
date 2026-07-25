@@ -7,6 +7,15 @@ import Image from "next/image";
 
 const slides = [
   {
+    image: "/images/balcony.webp",
+    title: "Chennai's #1 Balcony Safety Nets",
+    titlePrefix: "Chennai's #1 ",
+    titleHighlight: "Balcony Safety Nets",
+    titleSuffix: "",
+    subtitle: "Protect your loved ones, children, and pets with heavy-duty UV-stabilized balcony safety netting.",
+    tagline: "Same Day Installation"
+  },
+  {
     image: "/images/pigeonsafetynet.webp",
     title: "Chennai's #1 Pigeon Safety Nets",
     titlePrefix: "Chennai's #1 ",
