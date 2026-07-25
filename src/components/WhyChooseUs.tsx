@@ -18,7 +18,7 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="py-20 bg-[#000000] text-white relative overflow-hidden">
+    <section id="why-choose-us" className="py-20 bg-slate-950 text-white relative overflow-hidden border-t border-b border-slate-800/80">
       {/* Subtle background glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#e63946]/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e63946]/5 rounded-full blur-3xl pointer-events-none"></div>

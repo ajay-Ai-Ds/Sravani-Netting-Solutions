@@ -291,7 +291,7 @@ export default function Services() {
         </motion.div>
 
         {/* Section CTA */}
-        <div className="mt-12 text-center bg-[#000000] text-white rounded-2xl p-6 sm:p-8 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border border-[#333333]">
+        <div className="mt-12 text-center bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
           <div className="text-left">
             <h3 className="text-lg sm:text-xl font-bold font-display text-white">Need custom sizing or help?</h3>
             <p className="text-slate-300 text-xs sm:text-sm mt-1">Book a free inspection. No charges for measurements or visits.</p>

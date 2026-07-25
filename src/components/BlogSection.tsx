@@ -8,7 +8,7 @@ export default function BlogSection() {
   const recentBlogs = blogData.slice(0, 3);
 
   return (
-    <section id="blog" className="py-24 bg-[#000000] text-white relative overflow-hidden">
+    <section id="blog" className="py-24 bg-slate-950 text-white relative overflow-hidden border-t border-slate-800/80">
       {/* Background Subtle Gradient Blobs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#e63946]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#e63946]/5 rounded-full blur-3xl pointer-events-none" />

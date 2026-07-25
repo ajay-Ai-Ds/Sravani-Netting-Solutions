@@ -338,7 +338,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#000000]/90 backdrop-blur-xl rounded-xl p-4 sm:p-5 shadow-2xl relative border border-[#e5e5e5]/20 text-white"
+              className="bg-slate-900/95 backdrop-blur-xl rounded-2xl p-5 shadow-2xl relative border border-slate-700/60 text-white"
             >
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-3.5">
@@ -464,14 +464,14 @@ export default function Hero() {
     </section>
 
     {/* Mobile Enquiry Form - Rendered outside the hero section only on mobile */}
-    <div className="lg:hidden bg-black border-t border-[#e5e5e5]/20 py-10 px-4">
+    <div className="lg:hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-t border-slate-800 py-10 px-4">
       <div className="max-w-md mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="bg-black/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl relative border border-[#e5e5e5]/20"
+          className="bg-slate-800/80 backdrop-blur-xl rounded-2xl p-6 shadow-2xl relative border border-slate-700/60"
         >
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
