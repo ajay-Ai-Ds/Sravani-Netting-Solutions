@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Company Bio */}
           <div>
             <div className="flex items-center mb-4">
-              <Logo height={56} theme="dark" />
+              <Logo height={56} theme="light" />
             </div>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
               {"Chennai's trusted safety net installation experts. Protecting your family, balcony, pets, and children with 100% premium, UV-resistant, long-lasting materials."}
