@@ -79,7 +79,7 @@ export default function FAQ() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-secondary font-bold">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
@@ -88,7 +88,7 @@ export default function FAQ() {
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Read through our top 10 detailed FAQs to learn everything about installation, durability, and cost in Chennai.
           </p>
-          <div className="h-1 bg-secondary w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Accordion List */}

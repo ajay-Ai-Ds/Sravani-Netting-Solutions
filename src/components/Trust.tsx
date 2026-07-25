@@ -100,7 +100,7 @@ export default function Trust() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-secondary"
+            className="text-xs font-bold uppercase tracking-widest text-primary-light"
           >
             Why Sravani Netting Solutions
           </motion.span>
@@ -117,7 +117,7 @@ export default function Trust() {
             initial={{ width: 0 }}
             whileInView={{ width: 60 }}
             viewport={{ once: true }}
-            className="h-1 bg-secondary mx-auto mt-4 rounded"
+            className="h-1 bg-accent mx-auto mt-4 rounded"
           />
         </div>
 
@@ -145,9 +145,9 @@ export default function Trust() {
                   className="bg-slate-50 border border-slate-100 rounded-2xl p-6 transition-all duration-300 relative group flex-shrink-0 w-[290px] snap-start"
                 >
                   {/* Accent glow on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-secondary mb-4 border border-secondary/20 group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-4 border border-slate-100 group-hover:scale-105 transition-transform duration-300">
                     <Icon className="w-6 h-6 stroke-[2]" />
                   </div>
                   <h3 className="font-bold text-lg text-slate-800 mb-2 font-display">

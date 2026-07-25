@@ -160,7 +160,7 @@ export default function Services() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-secondary">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
             Our Services
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
@@ -169,7 +169,7 @@ export default function Services() {
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Protect your home, block pigeons, and save space with our premium installations. Click on any service to learn details.
           </p>
-          <div className="h-1 bg-secondary w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Tab Buttons */}
@@ -247,7 +247,7 @@ export default function Services() {
                     <ul className="space-y-2 mb-6">
                       {item.bulletPoints.map((pt, i) => (
                         <li key={i} className="flex items-start text-slate-600 text-xs sm:text-sm">
-                          <Check className="w-4.5 h-4.5 text-secondary shrink-0 mr-2 mt-0.5" />
+                          <Check className="w-4.5 h-4.5 text-accent shrink-0 mr-2 mt-0.5" />
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -258,7 +258,7 @@ export default function Services() {
                   <div className="space-y-3">
                     <button
                       onClick={() => setSelectedService(item)}
-                      className="w-full flex items-center justify-center space-x-1.5 py-3 border border-slate-200 hover:border-secondary text-slate-700 hover:text-secondary font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
+                      className="w-full flex items-center justify-center space-x-1.5 py-3 border border-slate-200 hover:border-primary text-slate-700 hover:text-primary font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
                     >
                       <Info className="w-4 h-4" />
                       <span>Learn Technical Details</span>
@@ -267,7 +267,7 @@ export default function Services() {
                     <div className="grid grid-cols-2 gap-2">
                       <a
                         href="tel:+918637607910"
-                        className="flex items-center justify-center space-x-1 bg-accent hover:bg-accent-dark text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors min-h-[48px]"
+                        className="flex items-center justify-center space-x-1 bg-primary text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-primary-light transition-colors min-h-[48px]"
                       >
                         <Phone className="w-3.5 h-3.5 fill-white" />
                         <span>Call</span>
@@ -276,9 +276,9 @@ export default function Services() {
                         href={whatsappUrl(item.name)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center space-x-1 bg-accent hover:bg-accent-dark text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors min-h-[48px]"
+                        className="flex items-center justify-center space-x-1 bg-accent text-slate-900 py-3 px-3 rounded-lg text-xs font-bold shadow-sm hover:bg-accent-dark transition-colors min-h-[48px]"
                       >
-                        <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                        <MessageCircle className="w-3.5 h-3.5 fill-slate-900" />
                         <span>WhatsApp</span>
                       </a>
                     </div>
@@ -299,7 +299,7 @@ export default function Services() {
           <div className="flex flex-wrap gap-3">
             <a
               href="tel:+918637607910"
-              className="bg-accent hover:bg-accent-dark text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
+              className="bg-white text-slate-900 hover:bg-slate-100 py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
             >
               📞 Call +91 86376 07910
             </a>
@@ -307,7 +307,7 @@ export default function Services() {
               href={whatsappUrl("General Inquiry")}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent hover:bg-accent-dark text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
+              className="bg-accent hover:bg-accent-dark text-slate-900 py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm"
             >
               💬 WhatsApp Quote
             </a>
@@ -390,7 +390,7 @@ export default function Services() {
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
                   <a
                     href="tel:+918637607910"
-                    className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3 rounded-lg text-sm font-bold shadow-md min-h-[48px]"
+                    className="flex items-center justify-center space-x-2 bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-md hover:bg-primary-light min-h-[48px]"
                   >
                     <Phone className="w-4 h-4 fill-white" />
                     <span>Call to Order</span>
@@ -399,9 +399,9 @@ export default function Services() {
                     href={whatsappUrl(selectedService.name)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-3 rounded-lg text-sm font-bold shadow-md min-h-[48px]"
+                    className="flex items-center justify-center space-x-2 bg-accent text-slate-900 py-3 rounded-lg text-sm font-bold shadow-md hover:bg-accent-dark min-h-[48px]"
                   >
-                    <MessageCircle className="w-4 h-4 fill-white" />
+                    <MessageCircle className="w-4 h-4 fill-slate-900" />
                     <span>Send Message</span>
                   </a>
                 </div>

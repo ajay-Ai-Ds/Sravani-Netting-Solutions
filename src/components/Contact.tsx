@@ -54,7 +54,7 @@ export default function Contact() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-secondary font-bold">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
             Contact Us
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
@@ -63,7 +63,7 @@ export default function Contact() {
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Get in touch with us via phone, WhatsApp, or the enquiry form. We serve all areas in Chennai.
           </p>
-          <div className="h-1 bg-secondary w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Big Conversion Banner at Top of Contact */}
@@ -73,7 +73,7 @@ export default function Contact() {
           
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 space-y-4">
-              <span className="bg-accent text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-accent/20">
+              <span className="bg-accent text-slate-900 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-accent/20">
                 Direct Booking Hotline
               </span>
               <h3 className="text-2xl sm:text-4.5xl font-extrabold font-display leading-tight">
@@ -87,18 +87,18 @@ export default function Contact() {
             <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">
               <a
                 href="tel:+918637607910"
-                className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
+                className="flex items-center justify-center space-x-2 bg-white text-primary hover:bg-slate-100 py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
               >
-                <Phone className="w-5 h-5 fill-white" />
+                <Phone className="w-5 h-5 fill-primary" />
                 <span>Call +91 86376 07910</span>
               </a>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
+                className="flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-slate-900 py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
               >
-                <MessageCircle className="w-5 h-5 fill-white" />
+                <MessageCircle className="w-5 h-5 fill-slate-900" />
                 <span>WhatsApp Quote</span>
               </a>
             </div>
@@ -117,7 +117,7 @@ export default function Contact() {
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3 text-slate-600 text-sm sm:text-base">
-                  <MapPin className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-slate-800 block">Our Address</span>
                     <span>Chennai, Tamil Nadu - India</span>
@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-3 text-slate-600 text-sm sm:text-base">
-                  <Clock className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                  <Clock className="w-5 h-5 text-primary shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-slate-800 block">Business Hours</span>
                     <span>Open 24 Hours / 7 Days a week (Sunday inclusive)</span>
@@ -133,10 +133,10 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-3 text-slate-600 text-sm sm:text-base">
-                  <Mail className="w-5 h-5 text-secondary shrink-0 mt-1" />
+                  <Mail className="w-5 h-5 text-primary shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-slate-800 block">Email Address</span>
-                    <a href="mailto:sravaninettingsolutions@gmail.com" className="hover:text-secondary transition-colors">
+                    <a href="mailto:sravaninettingsolutions@gmail.com" className="hover:text-primary transition-colors">
                       sravaninettingsolutions@gmail.com
                     </a>
                   </div>
@@ -234,9 +234,9 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer"
+                    className="w-full bg-accent hover:bg-accent-dark text-slate-900 py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer"
                   >
-                    <Send className="w-4 h-4 fill-white" />
+                    <Send className="w-4 h-4 fill-slate-900" />
                     <span>Submit Request</span>
                   </button>
                 </form>

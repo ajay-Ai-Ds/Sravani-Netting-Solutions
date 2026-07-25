@@ -65,7 +65,7 @@ export default function Process() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-secondary font-bold">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
             Working Process
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
@@ -74,7 +74,7 @@ export default function Process() {
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             From your first call to a fully secured home, we make the entire process quick and seamless.
           </p>
-          <div className="h-1 bg-secondary w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Desktop timeline horizontal layout */}
@@ -95,12 +95,12 @@ export default function Process() {
               >
                 {/* Connecting arrows between items */}
                 {index < 4 && (
-                  <div className="absolute top-10 left-[calc(50%+45px)] w-[calc(100%-90px)] h-0.5 border-t-2 border-dashed border-slate-300 group-hover:border-secondary transition-colors z-0" />
+                  <div className="absolute top-10 left-[calc(50%+45px)] w-[calc(100%-90px)] h-0.5 border-t-2 border-dashed border-slate-300 group-hover:border-primary-light transition-colors z-0" />
                 )}
 
                 {/* Step Circle with Icon */}
-                <div className="relative z-10 w-20 h-20 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center text-primary group-hover:border-secondary group-hover:shadow-md transition-all duration-300">
-                  <div className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white">
+                <div className="relative z-10 w-20 h-20 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center justify-center text-primary group-hover:border-primary group-hover:shadow-md transition-all duration-300">
+                  <div className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-accent text-slate-900 text-xs font-bold rounded-full flex items-center justify-center border-2 border-white">
                     {item.step}
                   </div>
                   <Icon className="w-9 h-9 stroke-[1.5]" />
@@ -138,7 +138,7 @@ export default function Process() {
               >
                 {/* Step Circle with Icon */}
                 <div className="w-16 h-16 bg-white rounded-xl border border-slate-200 shadow-sm flex items-center justify-center text-primary shrink-0 relative">
-                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-white">
+                  <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-accent text-slate-900 text-[10px] font-bold rounded-full flex items-center justify-center border border-white">
                     {item.step}
                   </div>
                   <Icon className="w-7 h-7 stroke-[1.5]" />

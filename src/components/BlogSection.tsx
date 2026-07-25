@@ -18,7 +18,7 @@ export default function BlogSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-secondary-light block mb-2 font-display">
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2 font-display">
               Safety Advice & Insights
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-display">
@@ -31,7 +31,7 @@ export default function BlogSection() {
 
           <Link
             href="/blog"
-            className="mt-6 md:mt-0 inline-flex items-center space-x-2 bg-accent hover:bg-accent-dark text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            className="mt-6 md:mt-0 inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all duration-300 transform hover:-translate-y-0.5"
           >
             <span>View All Articles</span>
             <ArrowRight className="w-4 h-4" />
@@ -43,7 +43,7 @@ export default function BlogSection() {
           {recentBlogs.map((post) => (
             <article
               key={post.slug}
-              className="bg-slate-800/80 border border-slate-700/80 rounded-2xl overflow-hidden shadow-xl flex flex-col group hover:border-secondary/50 hover:shadow-2xl transition-all duration-300"
+              className="bg-slate-800/80 border border-slate-700/80 rounded-2xl overflow-hidden shadow-xl flex flex-col group hover:border-amber-500/50 hover:shadow-2xl transition-all duration-300"
             >
               {/* Featured Image */}
               <div className="relative h-56 w-full overflow-hidden bg-slate-950">
@@ -56,7 +56,7 @@ export default function BlogSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60" />
                 <span className="absolute bottom-4 left-4 inline-flex items-center text-xs font-semibold text-slate-200 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                  <Calendar className="w-3 h-3 mr-1.5 text-secondary-light" />
+                  <Calendar className="w-3 h-3 mr-1.5 text-amber-400" />
                   {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </span>
               </div>
@@ -64,7 +64,7 @@ export default function BlogSection() {
               {/* Content Area */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-xl text-white font-display mb-3 group-hover:text-secondary-light transition-colors line-clamp-2 leading-snug">
+                  <h3 className="font-bold text-xl text-white font-display mb-3 group-hover:text-amber-400 transition-colors line-clamp-2 leading-snug">
                     <Link href={`/blog/${post.slug}`}>
                       {post.title}
                     </Link>
@@ -76,7 +76,7 @@ export default function BlogSection() {
 
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center text-sm font-bold text-secondary-light hover:text-white transition-colors group/link"
+                  className="inline-flex items-center text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors group/link"
                 >
                   <span>Read Article</span>
                   <ArrowRight className="w-4 h-4 ml-1.5 transform group-hover/link:translate-x-1 transition-transform" />

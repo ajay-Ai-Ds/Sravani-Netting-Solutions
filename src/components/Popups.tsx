@@ -198,20 +198,20 @@ export default function Popups() {
                   {/* Trust Factors inside popup */}
                   <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-1">
                     <span className="flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
                       <span>Same-Day Inspection</span>
                     </span>
                     <span className="flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
                       <span>No Obligation Quote</span>
                     </span>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-accent hover:bg-accent-dark text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98"
+                    className="w-full bg-accent hover:bg-accent-dark text-slate-900 py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98"
                   >
-                    <Send className="w-4 h-4 fill-white" />
+                    <Send className="w-4 h-4 fill-slate-900" />
                     <span>Get Free Quote Now</span>
                   </button>
 

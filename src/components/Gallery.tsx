@@ -111,7 +111,7 @@ export default function Gallery() {
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-secondary font-bold">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
             Our Work Showcase
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
@@ -120,7 +120,7 @@ export default function Gallery() {
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Take a look at some of our premium safety net and invisible grill installations across Chennai.
           </p>
-          <div className="h-1 bg-secondary w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-10">

@@ -156,7 +156,7 @@ export default function Reviews() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-secondary font-bold">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary-light">
             Customer Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 font-display">
@@ -165,7 +165,7 @@ export default function Reviews() {
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
             Read real feedback from homeowners across Chennai who secured their spaces with us.
           </p>
-          <div className="h-1 bg-secondary w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-accent w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Reviews Slider Container */}
