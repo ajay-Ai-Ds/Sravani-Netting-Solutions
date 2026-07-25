@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     canonical: "https://www.sravaninettingsolutions.com",
   },
   verification: {
-    google: "5r3kQZoixhnEDL0Uv_UboRzJCIv4w5UXJz7iPnX5STc",
+    google: "w2oVql4xTdEeC6242FsYA6Zw5atog9-E6FtaBcREk2Q",
   },
   robots: {
     index: true,
