@@ -182,6 +182,20 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} scroll-smooth h-full antialiased`}
     >
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-HPZMZJCT87');
+              gtag('config', 'AW-18291286869');
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -192,21 +206,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans pb-[60px] md:pb-0 overflow-x-hidden">
-        {/* Google tag (gtag.js) */}
-        <Script 
-          src="https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87" 
-          strategy="lazyOnload" 
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-HPZMZJCT87');
-            gtag('config', 'AW-18291286869');
-          `}
-        </Script>
         
         {/* Event snippet for Contact conversion page */}
         <Script id="google-conversion" strategy="lazyOnload">
