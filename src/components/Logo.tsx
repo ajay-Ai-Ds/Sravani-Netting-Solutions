@@ -18,26 +18,27 @@ export default function Logo({
 
   return (
     <div className={`flex items-center gap-2.5 sm:gap-3 select-none transition-all duration-300 ${className}`}>
-      {/* Garware Corporate Style Theme Emblem Logo */}
-      <div className="relative flex-shrink-0 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#e63946] to-[#dc2626] text-white shadow-md border border-[#e63946]/30">
+      {/* Modern Diamond Safety Net Weave Emblem */}
+      <div className="relative flex-shrink-0 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#000000] text-white shadow-md border border-[#e63946]/40 p-1.5 transition-transform duration-200">
         <svg
-          viewBox="0 0 40 40"
+          viewBox="0 0 36 36"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6 text-white"
+          className="w-full h-full"
         >
-          {/* Garware Shield Container */}
+          {/* Diamond Outer Frame */}
           <path
-            d="M20 4L32 9.5V19.5C32 27.2 26.9 34.3 20 36.5C13.1 34.3 8 27.2 8 19.5V9.5L20 4Z"
-            fill="currentColor"
-            fillOpacity="0.2"
-            stroke="currentColor"
+            d="M18 3L32 18L18 33L4 18L18 3Z"
+            stroke="#e63946"
             strokeWidth="2.5"
             strokeLinejoin="round"
           />
-          {/* Garware Netting Cross Weave */}
-          <path d="M14 13L26 27M26 13L14 27" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="20" cy="20" r="3" fill="#ffffff" />
+          {/* Inner Safety Mesh Grid */}
+          <path d="M18 7.5L27.5 18L18 28.5L8.5 18L18 7.5Z" stroke="#e63946" strokeWidth="1.2" strokeOpacity="0.4" />
+          {/* Cross Strand Tension Cables */}
+          <path d="M11 11L25 25M25 11L11 25" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+          {/* Center High-Tensile Anchor Knot Node */}
+          <circle cx="18" cy="18" r="3" fill="#e63946" stroke="#ffffff" strokeWidth="1.5" />
         </svg>
       </div>
 
@@ -57,7 +58,7 @@ export default function Logo({
             SAFETY SOLUTIONS
           </span>
           <span className="text-[#e63946] text-[8px] font-extrabold">•</span>
-          <span className="bg-[#000000] text-white text-[8px] sm:text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider border border-white/20">
+          <span className="bg-[#e63946] text-white text-[8px] sm:text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider shadow-xs">
             GARWARE
           </span>
         </div>
