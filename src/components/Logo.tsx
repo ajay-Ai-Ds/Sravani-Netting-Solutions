@@ -31,7 +31,7 @@ export default function Logo({
         />
       </div>
 
-      {/* Garware Theme Typography: SRAVANI NETTING */}
+      {/* Premium Theme Typography: SRAVANI NETTING */}
       <div className="flex flex-col justify-center">
         <div className="flex items-center gap-1.5 leading-none mb-1">
           <span className={`font-extrabold text-sm sm:text-base xl:text-lg tracking-tight font-display ${isDarkBg ? "text-white" : "text-[#000000]"}`}>
@@ -48,7 +48,7 @@ export default function Logo({
           </span>
           <span className="text-[#e63946] text-[8px] font-extrabold">•</span>
           <span className="bg-[#e63946] text-white text-[8px] sm:text-[9px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider shadow-xs">
-            GARWARE
+            PREMIUM
           </span>
         </div>
       </div>

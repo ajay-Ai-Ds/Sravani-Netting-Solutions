@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "How much do safety nets cost in Chennai?",
-    a: "The price of safety nets in Chennai starts from ₹12 to ₹35 per square foot. The exact rate depends on the mesh thickness, brand (like Garware), UV stabilization levels, and warranty period chosen (ranging from 1 to 5 years)."
+    a: "The price of safety nets in Chennai starts from ₹12 to ₹35 per square foot. The exact rate depends on the mesh thickness, high-grade polymer quality, UV stabilization levels, and warranty period chosen (ranging from 1 to 5 years)."
   },
   {
     q: "Are invisible grills safe for high-rise apartment balconies?",

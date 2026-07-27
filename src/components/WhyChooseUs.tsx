@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
               <span className="text-[#e63946]">#1 Choice</span>
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              {"We don't believe in cheap temporary fixes. At Sravani Netting Solutions, we use Garware grade high-tensile netting, 100% pure virgin HDPE materials, and heavy double-walled anchor expansions. Your family's safety is our highest priority."}
+              {"We don't believe in cheap temporary fixes. At Sravani Netting Solutions, we use industrial-grade high-tensile netting, 100% pure virgin HDPE materials, and heavy double-walled anchor expansions. Your family's safety is our highest priority."}
             </p>
 
             {/* Graphic Trust Banner */}

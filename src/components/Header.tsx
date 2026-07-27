@@ -267,11 +267,11 @@ export default function Header() {
             className="lg:hidden w-[calc(100%-2rem)] max-w-7xl mx-auto px-4 mt-2"
           >
             <div className="bg-white border border-[#e5e5e5] shadow-2xl rounded-2xl overflow-hidden p-5 space-y-4 text-[#000000]">
-              {/* Garware Partnership Header in Mobile Menu */}
+              {/* ISO Certified Header in Mobile Menu */}
               <div className="bg-[#f9f9f9] border border-[#e5e5e5] rounded-xl p-3 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <span className="bg-[#e63946] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
-                    Garware Certified
+                    ISO Certified
                   </span>
                   <span className="text-xs font-bold text-[#000000]">Safety Nets</span>
                 </div>
