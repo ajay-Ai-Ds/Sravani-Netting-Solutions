@@ -1,9 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, MessageCircle, ExternalLink, ShieldCheck, Sparkles, Camera, ThumbsUp } from "lucide-react";
+import { Heart, MessageCircle, ExternalLink, ShieldCheck, Sparkles, Camera, Play, Video } from "lucide-react";
 import InstagramIcon from "./InstagramIcon";
 import FacebookIcon from "./FacebookIcon";
+
+const reelsData = [
+  {
+    id: "DY4n6Njy1Th",
+    title: "Balcony Safety Net & Grill Installation Video",
+    location: "Chennai, Tamil Nadu",
+    url: "https://www.instagram.com/reel/DY4n6Njy1Th/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    embedUrl: "https://www.instagram.com/reel/DY4n6Njy1Th/embed",
+    badge: "Featured Installation Reel 1"
+  },
+  {
+    id: "DIFk-FvSVS7",
+    title: "High-Rise Safety Netting Work Live",
+    location: "Chennai, Tamil Nadu",
+    url: "https://www.instagram.com/reel/DIFk-FvSVS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    embedUrl: "https://www.instagram.com/reel/DIFk-FvSVS7/embed",
+    badge: "Featured Installation Reel 2"
+  }
+];
 
 const socialPosts = [
   {
@@ -90,25 +110,24 @@ export default function InstagramSection() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 border border-pink-500/30 text-pink-300 text-xs sm:text-sm font-semibold mb-4 backdrop-blur-sm">
             <InstagramIcon className="w-4 h-4 text-pink-400" />
-            <span>Follow Us On Social Media</span>
+            <span>Official Instagram Videos & Reels</span>
             <FacebookIcon className="w-4 h-4 text-blue-400 fill-current" />
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white leading-tight">
-            See Our Work Live <br className="hidden sm:inline" />
+            Watch Our Installation Videos <br className="hidden sm:inline" />
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-              On Instagram & Facebook
+              Live On Instagram & Facebook
             </span>
           </h2>
 
           <p className="text-slate-300 mt-4 text-base sm:text-lg font-light leading-relaxed">
-            Explore our daily safety net & invisible grill installations across Chennai. Follow our social handles for customer stories, real site videos, and special offers!
+            Watch real site installation videos, customer feedback, and project transformations directly from our official Instagram profile <span className="font-semibold text-pink-300">@sravani_netting_solutions</span>!
           </p>
 
-          {/* Direct Profile Link Buttons (Instagram & Facebook) */}
+          {/* Direct Profile Link Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* Instagram Button */}
             <a
               href={instagramUrl}
               target="_blank"
@@ -118,11 +137,10 @@ export default function InstagramSection() {
               <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                 <InstagramIcon className="w-4 h-4 text-white" />
               </div>
-              <span>Instagram @sravani_netting_solutions</span>
+              <span>Follow @sravani_netting_solutions</span>
               <ExternalLink className="w-4 h-4 text-white/70 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Facebook Button */}
             <a
               href={facebookUrl}
               target="_blank"
@@ -135,6 +153,73 @@ export default function InstagramSection() {
               <span>Facebook Page</span>
               <ExternalLink className="w-4 h-4 text-white/70 group-hover:translate-x-1 transition-transform" />
             </a>
+          </div>
+        </div>
+
+        {/* FEATURED INSTAGRAM REELS VIDEO SHOWCASE */}
+        <div className="mb-16">
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <Video className="w-5 h-5 text-rose-400" />
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-white">
+              Featured Instagram Installation Reels
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {reelsData.map((reel) => (
+              <motion.div
+                key={reel.id}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-slate-900/90 rounded-3xl p-4 border border-slate-800 hover:border-pink-500/50 transition-all duration-300 shadow-2xl flex flex-col items-center"
+              >
+                {/* Reel Header Pill */}
+                <div className="w-full flex items-center justify-between mb-3 px-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse" />
+                    <span className="text-xs font-bold text-slate-200">{reel.badge}</span>
+                  </div>
+                  <a
+                    href={reel.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-semibold text-pink-400 hover:text-pink-300 flex items-center gap-1"
+                  >
+                    <span>Open Reel</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
+                {/* Instagram Embedded Reel Iframe */}
+                <div className="w-full relative aspect-[9/16] sm:h-[480px] bg-slate-950 rounded-2xl overflow-hidden shadow-inner border border-slate-800">
+                  <iframe
+                    src={reel.embedUrl}
+                    className="w-full h-full border-0 rounded-2xl"
+                    allowFullScreen
+                    scrolling="no"
+                    title={reel.title}
+                  />
+                </div>
+
+                {/* Reel Caption Footer */}
+                <div className="w-full pt-4 pb-2 px-2 flex items-center justify-between text-xs text-slate-300 border-t border-slate-800/80 mt-3">
+                  <span className="font-semibold text-white truncate max-w-[220px]">
+                    {reel.title}
+                  </span>
+                  <a
+                    href={reel.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 px-3 py-1.5 rounded-lg bg-pink-600/20 hover:bg-pink-600/30 text-pink-300 border border-pink-500/30 font-bold transition-colors flex items-center gap-1"
+                  >
+                    <Play className="w-3 h-3 fill-current" />
+                    <span>Watch Reel</span>
+                  </a>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -206,7 +291,7 @@ export default function InstagramSection() {
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-slate-950/40 backdrop-blur-[2px]">
                     <div className="flex items-center gap-6 text-white font-bold text-sm bg-slate-900/90 px-5 py-2.5 rounded-full border border-white/20 shadow-2xl">
                       <span className={`flex items-center gap-1.5 ${isFb ? "text-blue-400" : "text-rose-400"}`}>
-                        {isFb ? <ThumbsUp className="w-4 h-4 fill-blue-500" /> : <Heart className="w-4 h-4 fill-rose-500" />}
+                        <Heart className="w-4 h-4 fill-current" />
                         {post.likes}
                       </span>
                       <span className="flex items-center gap-1.5 text-slate-200">
@@ -258,7 +343,7 @@ export default function InstagramSection() {
                 Connect with Sravani Netting Solutions
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm mt-0.5">
-                Join our growing community on Instagram & Facebook for safety tips, installation showcases & exclusive discounts.
+                Join our growing community on Instagram & Facebook for safety tips, installation video showcases & exclusive discounts.
               </p>
             </div>
           </div>
