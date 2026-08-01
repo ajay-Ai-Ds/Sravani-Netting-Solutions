@@ -79,13 +79,13 @@ const slides = [
     tagline: "Heavy-Duty Pulley System"
   },
   {
-    image: "/images/sravanjcarousel.jpg",
-    title: "Chennai's #1 Premium Netting Solutions",
-    titlePrefix: "Chennai's #1 ",
-    titleHighlight: "Premium Netting Solutions",
+    image: "/images/petsafetynet.webp",
+    title: "100% Reliable Pet & Child Safety Netting",
+    titlePrefix: "100% Reliable ",
+    titleHighlight: "Pet & Child Safety Nets",
     titleSuffix: "",
-    subtitle: "Protect your loved ones, children, and pets with heavy-duty UV-stabilized safety netting.",
-    tagline: "Same Day Installation"
+    subtitle: "Keep your cats, dogs, and toddlers completely secure on open high-rise apartment balconies.",
+    tagline: "Heavy-Duty & Weather-Proof"
   }
 ];
 
