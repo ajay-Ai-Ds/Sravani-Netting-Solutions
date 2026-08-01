@@ -2,6 +2,8 @@
 
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Logo from "./Logo";
+import InstagramIcon from "./InstagramIcon";
+import FacebookIcon from "./FacebookIcon";
 
 export default function Footer() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -15,6 +17,9 @@ export default function Footer() {
       target.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const instagramUrl = "https://www.instagram.com/sravani_netting_solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+  const facebookUrl = "https://www.facebook.com/profile.php?id=100088136656535";
 
   return (
     <footer className="bg-slate-950 text-white pt-16 pb-8 border-t border-slate-800">
@@ -46,6 +51,24 @@ export default function Footer() {
                 <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.381 9.805-9.786.002-2.618-1.01-5.074-2.854-6.921C16.38 2.052 13.933.996 11.999.996 6.596.996 2.197 5.379 2.195 10.785c-.001 1.512.409 2.99 1.182 4.298l-.994 3.63 3.731-.973-1.066.614zm11.332-6.52c-.274-.136-1.62-.8-1.87-.892-.252-.09-.435-.136-.617.137-.183.272-.708.892-.868 1.074-.16.183-.32.204-.593.068-1.579-.79-2.73-1.37-3.818-3.23-.288-.492.288-.456.822-1.52.091-.183.046-.343-.023-.48-.068-.136-.617-1.484-.846-2.033-.223-.536-.469-.463-.617-.47l-.527-.008c-.183 0-.48.069-.731.343-.252.274-.96.937-.96 2.285 0 1.348.982 2.651 1.119 2.833.137.183 1.933 2.951 4.682 4.141.654.282 1.165.451 1.564.578.658.209 1.258.18 1.732.109.528-.079 1.62-.663 1.85-1.302.23-.639.23-1.187.16-1.302-.07-.116-.275-.183-.55-.32z" />
                 </svg>
+              </a>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-white transition-all duration-300 border border-slate-700 hover:border-transparent shadow-md"
+                aria-label="Instagram Profile"
+              >
+                <InstagramIcon className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 hover:bg-[#1877F2] text-white transition-all duration-300 border border-slate-700 hover:border-transparent shadow-md"
+                aria-label="Facebook Page"
+              >
+                <FacebookIcon className="w-5 h-5 text-white fill-white" />
               </a>
             </div>
           </div>
@@ -173,6 +196,28 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-[#e63946] shrink-0" />
                 <a href="mailto:sravaninettingsolutions@gmail.com" className="text-slate-300 hover:text-white transition-colors">
                   sravaninettingsolutions@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <InstagramIcon className="w-4 h-4 text-pink-400 shrink-0" />
+                <a 
+                  href={instagramUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-pink-300 hover:text-pink-200 transition-colors font-medium"
+                >
+                  @sravani_netting_solutions
+                </a>
+              </li>
+              <li className="flex items-center space-x-2">
+                <FacebookIcon className="w-4 h-4 text-blue-400 shrink-0 fill-blue-400" />
+                <a 
+                  href={facebookUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-300 hover:text-blue-200 transition-colors font-medium"
+                >
+                  Facebook Page
                 </a>
               </li>
               <li className="flex items-center space-x-2">

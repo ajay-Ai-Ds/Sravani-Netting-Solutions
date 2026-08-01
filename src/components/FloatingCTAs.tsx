@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Phone, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import InstagramIcon from "./InstagramIcon";
+import FacebookIcon from "./FacebookIcon";
 
 export default function FloatingCTAs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,11 +29,49 @@ export default function FloatingCTAs() {
   };
 
   const whatsappUrl = "https://wa.me/918637607910?text=Hi%20Sravani%20Netting%20Solutions%2C%20I%20want%20to%20book%20a%20free%20inspection%20for%20my%20balcony%20safety%20nets.";
+  const instagramUrl = "https://www.instagram.com/sravani_netting_solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+  const facebookUrl = "https://www.facebook.com/profile.php?id=100088136656535";
 
   return (
     <>
       {/* Floating Buttons on Right (Desktop & Mobile) */}
       <div className="fixed bottom-24 right-5 z-40 flex flex-col space-y-3 items-end">
+        {/* Facebook Floating */}
+        <motion.a
+          href={facebookUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex items-center justify-center w-14 h-14 bg-[#1877F2] hover:bg-[#166fe5] text-white rounded-full shadow-xl cursor-pointer transition-all duration-200 relative group border border-white/30"
+          aria-label="Follow us on Facebook"
+        >
+          <FacebookIcon className="w-6 h-6 text-white fill-white" />
+          <span className="absolute right-16 bg-slate-900 text-white text-xs px-2.5 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none border border-slate-700">
+            Facebook Page
+          </span>
+        </motion.a>
+
+        {/* Instagram Floating */}
+        <motion.a
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white rounded-full shadow-xl cursor-pointer transition-all duration-200 relative group border border-white/30"
+          aria-label="Follow us on Instagram"
+        >
+          <InstagramIcon className="w-6 h-6 text-white" />
+          <span className="absolute right-16 bg-slate-900 text-white text-xs px-2.5 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none border border-slate-700">
+            Instagram @sravani_netting_solutions
+          </span>
+        </motion.a>
+
         {/* WhatsApp Floating */}
         <motion.a
           href={whatsappUrl}

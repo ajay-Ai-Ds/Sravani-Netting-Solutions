@@ -10,6 +10,7 @@ const Gallery = dynamic(() => import("@/components/Gallery"));
 const Process = dynamic(() => import("@/components/Process"));
 const Reviews = dynamic(() => import("@/components/Reviews"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
+const InstagramSection = dynamic(() => import("@/components/InstagramSection"));
 const BlogSection = dynamic(() => import("@/components/BlogSection"));
 const Contact = dynamic(() => import("@/components/Contact"));
 const Footer = dynamic(() => import("@/components/Footer"));
@@ -28,6 +29,7 @@ export default function Home() {
         <Gallery />
         <Process />
         <Reviews />
+        <InstagramSection />
         <FAQ />
         <BlogSection />
         <Contact />

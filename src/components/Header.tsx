@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Phone, Menu, X, Mail, MapPin, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
+import InstagramIcon from "./InstagramIcon";
+import FacebookIcon from "./FacebookIcon";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -14,6 +16,7 @@ const navItems = [
   { name: "Why Us", href: "#why-choose-us" },
   { name: "Gallery", href: "#gallery" },
   { name: "Reviews", href: "#reviews" },
+  { name: "Social Media", href: "#instagram" },
   { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" }
 ];
@@ -145,19 +148,40 @@ export default function Header() {
             <span>Serving All Chennai</span>
           </div>
 
-          {/* Right: Email + Badge */}
-          <div className="flex items-center space-x-4">
+          {/* Right: Instagram + Facebook + Email + Badge */}
+          <div className="flex items-center space-x-2.5 sm:space-x-3.5">
+            <a
+              href="https://www.instagram.com/sravani_netting_solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors flex items-center gap-1 font-semibold text-white/95 bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-full border border-white/20 text-xs"
+              aria-label="Instagram Profile"
+            >
+              <InstagramIcon className="w-3.5 h-3.5 text-pink-200" />
+              <span>@sravani_netting_solutions</span>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100088136656535"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors hidden sm:flex items-center gap-1 font-semibold text-white/95 bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-full border border-white/20 text-xs"
+              aria-label="Facebook Page"
+            >
+              <FacebookIcon className="w-3.5 h-3.5 text-blue-200 fill-blue-200" />
+              <span>Facebook</span>
+            </a>
+            <span className="hidden sm:inline text-white/30">|</span>
             <a 
               href="mailto:sravaninettingsolutions@gmail.com" 
-              className="hover:text-white/90 transition-colors hidden sm:flex items-center gap-1 text-white/90"
+              className="hover:text-white/90 transition-colors hidden md:flex items-center gap-1 text-white/90"
               aria-label="Email Us"
             >
               <Mail className="w-3.5 h-3.5 text-white" />
               <span className="hidden lg:inline">sravaninettingsolutions@gmail.com</span>
               <span className="inline lg:hidden">Email Us</span>
             </a>
-            <span className="hidden sm:inline text-white/30">|</span>
-            <span className="flex items-center gap-1.5 text-white font-bold bg-black/15 px-2.5 py-0.5 rounded-full border border-white/20">
+            <span className="hidden lg:inline text-white/30">|</span>
+            <span className="hidden sm:flex items-center gap-1.5 text-white font-bold bg-black/15 px-2.5 py-0.5 rounded-full border border-white/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Phone, MessageCircle, MapPin, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import InstagramIcon from "./InstagramIcon";
+import FacebookIcon from "./FacebookIcon";
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -9,6 +11,9 @@ export default function Contact() {
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("Balcony Safety Nets");
   const [message, setMessage] = useState("");
+
+  const instagramUrl = "https://www.instagram.com/sravani_netting_solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+  const facebookUrl = "https://www.facebook.com/profile.php?id=100088136656535";
 
   const servicesList = [
     "Balcony Safety Nets",
@@ -138,6 +143,38 @@ export default function Contact() {
                     <span className="font-bold text-[#000000] block">Email Address</span>
                     <a href="mailto:sravaninettingsolutions@gmail.com" className="hover:text-[#e63946] transition-colors">
                       sravaninettingsolutions@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 text-slate-700 text-sm sm:text-base">
+                  <InstagramIcon className="w-5 h-5 text-pink-600 shrink-0 mt-1" />
+                  <div>
+                    <span className="font-bold text-[#000000] block">Official Instagram</span>
+                    <a 
+                      href={instagramUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-pink-600 hover:text-pink-700 font-semibold transition-colors flex items-center gap-1"
+                    >
+                      <span>@sravani_netting_solutions</span>
+                      <span className="text-xs bg-pink-100 text-pink-700 font-bold px-2 py-0.5 rounded-full ml-1">Follow</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 text-slate-700 text-sm sm:text-base">
+                  <FacebookIcon className="w-5 h-5 text-[#1877F2] shrink-0 mt-1 fill-[#1877F2]" />
+                  <div>
+                    <span className="font-bold text-[#000000] block">Official Facebook</span>
+                    <a 
+                      href={facebookUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#1877F2] hover:text-[#166fe5] font-semibold transition-colors flex items-center gap-1"
+                    >
+                      <span>Sravani Netting Solutions Page</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded-full ml-1">Like & Follow</span>
                     </a>
                   </div>
                 </div>

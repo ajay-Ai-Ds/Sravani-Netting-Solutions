@@ -7,15 +7,6 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/images/sravanjcarousel.jpg",
-    title: "Chennai's #1 Premium Netting Solutions",
-    titlePrefix: "Chennai's #1 ",
-    titleHighlight: "Premium Netting Solutions",
-    titleSuffix: "",
-    subtitle: "Protect your loved ones, children, and pets with heavy-duty UV-stabilized safety netting.",
-    tagline: "Same Day Installation"
-  },
-  {
     image: "/images/balcony.webp",
     title: "Chennai's #1 Balcony Safety Nets",
     titlePrefix: "Chennai's #1 ",
@@ -86,6 +77,15 @@ const slides = [
     titleSuffix: "",
     subtitle: "Premium pulley-operated stainless steel drying rods for efficient balcony space management.",
     tagline: "Heavy-Duty Pulley System"
+  },
+  {
+    image: "/images/sravanjcarousel.jpg",
+    title: "Chennai's #1 Premium Netting Solutions",
+    titlePrefix: "Chennai's #1 ",
+    titleHighlight: "Premium Netting Solutions",
+    titleSuffix: "",
+    subtitle: "Protect your loved ones, children, and pets with heavy-duty UV-stabilized safety netting.",
+    tagline: "Same Day Installation"
   }
 ];
 
