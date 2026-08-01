@@ -187,8 +187,8 @@ export default function Footer() {
         <div className="border-t border-[#333333] pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400">
           <p>© {new Date().getFullYear()} Sravani Netting Solutions Chennai. All Rights Reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white hover:underline">Privacy Policy</a>
-            <a href="#" className="hover:text-white hover:underline">Terms & Conditions</a>
+            <a href="/privacy-policy" className="hover:text-white hover:underline">Privacy Policy</a>
+            <a href="/terms-and-conditions" className="hover:text-white hover:underline">Terms & Conditions</a>
             <a href="#faq" onClick={(e) => handleNavClick(e, "#faq")} className="hover:text-white hover:underline">FAQ</a>
           </div>
         </div>
