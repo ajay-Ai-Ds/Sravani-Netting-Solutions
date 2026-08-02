@@ -14,8 +14,8 @@
   --color-text-light: #ffffff;
   --color-border: #e5e5e5;
   
-  --font-sans: var(--font-sans), sans-serif;
-  --font-display: var(--font-display), sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
   
   --animate-float: float 3s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;

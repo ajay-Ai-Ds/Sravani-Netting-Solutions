@@ -199,6 +199,7 @@ export default function InstagramSection() {
                     className="w-full h-full border-0 rounded-2xl"
                     allowFullScreen
                     scrolling="no"
+                    loading="lazy"
                     title={reel.title}
                   />
                 </div>

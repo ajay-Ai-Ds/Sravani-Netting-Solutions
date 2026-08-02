@@ -218,8 +218,9 @@ export default function Hero() {
               alt={slides[currentSlide].title}
               fill
               priority={currentSlide === 0}
+              fetchPriority={currentSlide === 0 ? "high" : "auto"}
               loading={currentSlide === 0 ? undefined : "lazy"}
-              quality={80}
+              quality={75}
               className="w-full h-full object-cover object-center"
               style={{ filter: "saturate(1.05) brightness(0.92) contrast(1.02)" }}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"

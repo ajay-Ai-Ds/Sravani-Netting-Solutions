@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-sans",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-display",
-});
 
 export const metadata: Metadata = {
   title: "Sravani Netting Solutions Chennai | Premium Balcony Safety Nets & Invisible Grills",
@@ -179,23 +166,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${outfit.variable} scroll-smooth h-full antialiased`}
+      className="scroll-smooth h-full antialiased"
     >
       <head>
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-HPZMZJCT87');
-              gtag('config', 'AW-18291286869');
-            `,
-          }}
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preload" as="image" href="/images/balcony.webp" type="image/webp" fetchPriority="high" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -204,6 +182,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87"
+          strategy="lazyOnload"
+        />
+        <Script id="gtag-init" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HPZMZJCT87');
+            gtag('config', 'AW-18291286869');
+          `}
+        </Script>
       </head>
       <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans pb-[60px] md:pb-0 overflow-x-hidden">
         

@@ -148,6 +148,7 @@ const galleryItems = [
 
 export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(9);
 
   const handlePrev = () => {
     if (lightboxIndex === null) return;
@@ -158,6 +159,8 @@ export default function Gallery() {
     if (lightboxIndex === null) return;
     setLightboxIndex((prev) => (prev === galleryItems.length - 1 ? 0 : prev! + 1));
   };
+
+  const visibleItems = galleryItems.slice(0, visibleCount);
 
   return (
     <section id="gallery" className="py-20 bg-slate-50 relative overflow-hidden">
@@ -174,14 +177,14 @@ export default function Gallery() {
 
         {/* Clean Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {galleryItems.map((item, index) => {
+          {visibleItems.map((item, index) => {
             return (
               <motion.button
                 key={item.id}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: (index % 6) * 0.04 }}
+                transition={{ duration: 0.3, delay: (index % 3) * 0.05 }}
                 className="relative group rounded-3xl overflow-hidden aspect-[4/3] w-full bg-slate-900 border border-slate-200 shadow-md cursor-pointer hover:shadow-2xl hover:border-[#e63946]/50 transition-all duration-300 focus:outline-none text-left"
                 onClick={() => setLightboxIndex(index)}
                 aria-label={`View ${item.title}`}
@@ -210,6 +213,17 @@ export default function Gallery() {
             );
           })}
         </div>
+
+        {visibleCount < galleryItems.length && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setVisibleCount(galleryItems.length)}
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white hover:bg-slate-100 text-slate-900 font-bold border border-slate-300 shadow-md hover:shadow-lg transition-all text-sm sm:text-base cursor-pointer"
+            >
+              View More Photos ({galleryItems.length - visibleCount} More)
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Full Screen Lightbox Modal */}
