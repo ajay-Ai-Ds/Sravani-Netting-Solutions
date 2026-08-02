@@ -43,7 +43,7 @@ const socialPosts = [
     location: "Anna Nagar, Chennai",
     likes: "419",
     comments: "35",
-    image: "/images/invisible-grills.webp",
+    image: "/images/balconygrill.webp",
     tag: "Invisible Grills",
     platform: "facebook",
     description: "Sleek 316 stainless steel cable grills providing security without blocking panoramic views."
@@ -54,7 +54,7 @@ const socialPosts = [
     location: "Guindy, Chennai",
     likes: "285",
     comments: "19",
-    image: "/images/pigeon.webp",
+    image: "/images/pigeonsafetynet.webp",
     tag: "Pigeon Netting",
     platform: "instagram",
     description: "Clean bird proofing solution keeping duct areas and balconies pigeon-free & hygienic."
@@ -65,7 +65,7 @@ const socialPosts = [
     location: "Porur, Chennai",
     likes: "198",
     comments: "14",
-    image: "/images/cloth-hangers.webp",
+    image: "/images/clothhanger.jpg",
     tag: "Cloth Hangers",
     platform: "facebook",
     description: "Space-saving heavy-duty ceiling cloth drying hanger installation."
@@ -76,7 +76,7 @@ const socialPosts = [
     location: "ECR, Chennai",
     likes: "512",
     comments: "42",
-    image: "/images/children-safety.webp",
+    image: "/images/petsafetynet.webp",
     tag: "Child Safety",
     platform: "instagram",
     description: "Heavy impact resistant child safety nets for complete peace of mind."
@@ -87,7 +87,7 @@ const socialPosts = [
     location: "OMR, Chennai",
     likes: "376",
     comments: "26",
-    image: "/images/cricket-nets.webp",
+    image: "/images/cricket.jpeg",
     tag: "Sports Nets",
     platform: "facebook",
     description: "Custom outdoor cricket box netting and sports enclosure installation."

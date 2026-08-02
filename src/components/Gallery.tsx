@@ -5,176 +5,208 @@ import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-const categories = ["All", "Apartment", "Balcony", "Invisible Grill", "Monkey Net", "Bird Net", "Sports Net"];
-
 const galleryItems = [
+  // 15 Newly Added Client Work & Project Images
   {
     id: 1,
-    title: "Balcony Protection Net",
-    category: "Balcony",
-    image: "/images/clientwork (1).jpg"
+    title: "High-Rise Balcony Safety Netting",
+    image: "/images/IMG-20260727-WA0046.jpg"
   },
   {
     id: 2,
-    title: "Invisible Grill Installation",
-    category: "Invisible Grill",
-    image: "/images/clientwork (2).jpg"
+    title: "Pigeon Protection Mesh Installation",
+    image: "/images/IMG-20260727-WA0047.jpg"
   },
   {
     id: 3,
-    title: "Apartment Safety Net",
-    category: "Apartment",
-    image: "/images/clientwork (3).jpg"
+    title: "Transparent Balcony Safety Netting",
+    image: "/images/IMG-20260727-WA0048.jpg"
   },
   {
     id: 4,
-    title: "Heavy Duty Monkey Net",
-    category: "Monkey Net",
-    image: "/images/clientwork (4).jpg"
+    title: "SS 316 Marine Grade Invisible Grill",
+    image: "/images/IMG-20260727-WA0049.jpg"
   },
   {
     id: 5,
-    title: "Cricket Practice Net",
-    category: "Sports Net",
-    image: "/images/clientwork (5).jpg"
+    title: "Residential Apartment Safety Net",
+    image: "/images/IMG-20260727-WA0050.jpg"
   },
   {
     id: 6,
-    title: "Anti-Bird Netting",
-    category: "Bird Net",
-    image: "/images/clientwork (6).jpg"
+    title: "Child & Pet Safety Balcony Barrier",
+    image: "/images/IMG-20260727-WA0051.jpg"
   },
   {
     id: 7,
-    title: "Residential Balcony Net",
-    category: "Balcony",
-    image: "/images/clientwork (7).jpg"
+    title: "Duct Area Anti-Bird Netting",
+    image: "/images/IMG-20260727-WA0052.jpg"
   },
   {
     id: 8,
-    title: "High-Rise Invisible Grill",
-    category: "Invisible Grill",
-    image: "/images/clientwork (8).jpg"
+    title: "Heavy Duty Monkey Safety Net",
+    image: "/images/IMG-20260727-WA0053(1).jpg"
   },
   {
     id: 9,
-    title: "Duct Area Safety Net",
-    category: "Apartment",
-    image: "/images/clientwork (9).jpg"
+    title: "Terrace Cricket Practice Enclosure",
+    image: "/images/IMG-20260727-WA0054(1).jpg"
   },
   {
     id: 10,
-    title: "Monkey Protection Mesh",
-    category: "Monkey Net",
-    image: "/images/clientwork (10).jpg"
+    title: "Open Terrace Safety Protection",
+    image: "/images/IMG-20260727-WA0055(1).jpg"
   },
   {
     id: 11,
-    title: "Sports Arena Netting",
-    category: "Sports Net",
-    image: "/images/clientwork (11).jpg"
+    title: "UV-Stabilized Balcony Net Work",
+    image: "/images/IMG-20260727-WA0058.jpg"
   },
   {
     id: 12,
+    title: "Panoramic Balcony Invisible Grill",
+    image: "/images/IMG-20260802-WA0004.jpg"
+  },
+  {
+    id: 13,
+    title: "Toddler Safety Balcony Netting",
+    image: "/images/IMG-20260802-WA0005.jpg"
+  },
+  {
+    id: 14,
+    title: "Hygienic Pigeon Protection Mesh",
+    image: "/images/IMG-20260802-WA0007.jpg"
+  },
+  {
+    id: 15,
+    title: "Premium Site Installation Showcase",
+    image: "/images/file_00000000c31881fab3fa1469ff92f4ed.png"
+  },
+
+  // Existing Gallery Showcase Images
+  {
+    id: 16,
+    title: "Balcony Protection Net",
+    image: "/images/clientwork (1).jpg"
+  },
+  {
+    id: 17,
+    title: "Invisible Grill Installation",
+    image: "/images/clientwork (2).jpg"
+  },
+  {
+    id: 18,
+    title: "Apartment Safety Net",
+    image: "/images/clientwork (3).jpg"
+  },
+  {
+    id: 19,
+    title: "Heavy Duty Monkey Net",
+    image: "/images/clientwork (4).jpg"
+  },
+  {
+    id: 20,
+    title: "Cricket Practice Net",
+    image: "/images/clientwork (5).jpg"
+  },
+  {
+    id: 21,
+    title: "Anti-Bird Netting",
+    image: "/images/clientwork (6).jpg"
+  },
+  {
+    id: 22,
+    title: "Residential Balcony Net",
+    image: "/images/clientwork (7).jpg"
+  },
+  {
+    id: 23,
+    title: "High-Rise Invisible Grill",
+    image: "/images/clientwork (8).jpg"
+  },
+  {
+    id: 24,
+    title: "Duct Area Safety Net",
+    image: "/images/clientwork (9).jpg"
+  },
+  {
+    id: 25,
+    title: "Monkey Protection Mesh",
+    image: "/images/clientwork (10).jpg"
+  },
+  {
+    id: 26,
+    title: "Sports Arena Netting",
+    image: "/images/clientwork (11).jpg"
+  },
+  {
+    id: 27,
     title: "Pigeon Control Net",
-    category: "Bird Net",
     image: "/images/clientwork (12).jpg"
   }
 ];
 
 export default function Gallery() {
-  const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
-  const filteredItems = activeFilter === "All"
-    ? galleryItems
-    : galleryItems.filter(item => item.category === activeFilter);
-
-  const openLightbox = (itemIndex: number) => {
-    // Find index of the clicked item in the FILTERED list
-    setLightboxIndex(itemIndex);
-  };
 
   const handlePrev = () => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => (prev === 0 ? filteredItems.length - 1 : prev! - 1));
+    setLightboxIndex((prev) => (prev === 0 ? galleryItems.length - 1 : prev! - 1));
   };
 
   const handleNext = () => {
     if (lightboxIndex === null) return;
-    setLightboxIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev! + 1));
+    setLightboxIndex((prev) => (prev === galleryItems.length - 1 ? 0 : prev! + 1));
   };
 
   return (
-    <section id="gallery" className="py-20 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-20 bg-slate-50 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
-            Our Work Showcase
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
-            Completed Projects Gallery
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-14">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-display leading-tight">
+            Safety You Can Trust — <br className="hidden sm:inline" />
+            <span className="text-[#e63946]">Premium Nets for Every Home.</span>
           </h2>
-          <p className="text-slate-700 mt-3 text-sm sm:text-base">
-            Take a look at some of our premium safety net and invisible grill installations across Chennai.
-          </p>
-          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
+          <div className="h-1.5 bg-[#e63946] w-24 mx-auto mt-5 rounded-full" />
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setActiveFilter(cat);
-                setLightboxIndex(null);
-              }}
-              className={`px-4 py-3 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer min-h-[48px] border ${
-                activeFilter === cat
-                  ? "bg-[#e63946] text-white border-[#e63946] shadow-sm"
-                  : "bg-[#f9f9f9] text-slate-800 border-[#e5e5e5] hover:bg-[#e63946] hover:text-white hover:border-[#e63946]"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Gallery Grid Area (rendered exactly once per image, optimized) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item, index) => {
+        {/* Clean Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {galleryItems.map((item, index) => {
             return (
-              <button
+              <motion.button
                 key={item.id}
-                className="relative group rounded-2xl overflow-hidden aspect-[4/3] w-full bg-slate-100 border border-[#e5e5e5] shadow-sm cursor-pointer hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:ring-offset-2 text-left"
-                onClick={() => openLightbox(index)}
-                aria-label={`View larger image of ${item.title}`}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: (index % 6) * 0.04 }}
+                className="relative group rounded-3xl overflow-hidden aspect-[4/3] w-full bg-slate-900 border border-slate-200 shadow-md cursor-pointer hover:shadow-2xl hover:border-[#e63946]/50 transition-all duration-300 focus:outline-none text-left"
+                onClick={() => setLightboxIndex(index)}
+                aria-label={`View ${item.title}`}
               >
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={600}
+                  height={450}
+                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 
-                {/* Red Semi-Transparent Overlay on Hover */}
-                <div className="absolute inset-0 bg-[#e63946]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                  <span className="text-white/90 text-[10px] uppercase font-bold tracking-wider mb-1">
-                    {item.category}
-                  </span>
-                  <h3 className="text-white font-bold text-sm sm:text-base font-display">
+                {/* Clean Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                  <h3 className="text-white font-bold text-base sm:text-lg font-display drop-shadow-md">
                     {item.title}
                   </h3>
-                  <div className="absolute top-4 right-4 bg-white/20 p-2 rounded-lg text-white backdrop-blur-sm">
-                    <Maximize2 className="w-4 h-4" />
-                  </div>
                 </div>
-              </button>
+
+                <div className="absolute top-4 right-4 bg-slate-950/70 p-2.5 rounded-xl text-white backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <Maximize2 className="w-4 h-4 text-white" />
+                </div>
+              </motion.button>
             );
           })}
         </div>
@@ -183,12 +215,12 @@ export default function Gallery() {
       {/* Full Screen Lightbox Modal */}
       <AnimatePresence>
         {lightboxIndex !== null && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm select-none p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-md select-none p-4">
             
             {/* Close button */}
             <button
               onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 flex items-center justify-center rounded-lg transition-colors z-20 cursor-pointer"
+              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 flex items-center justify-center rounded-xl transition-colors z-20 cursor-pointer border border-white/10"
               aria-label="Close Lightbox"
             >
               <X className="w-6 h-6" />
@@ -197,7 +229,7 @@ export default function Gallery() {
             {/* Left navigation arrow */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 sm:left-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute left-4 sm:left-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer border border-white/10"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -209,12 +241,12 @@ export default function Gallery() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.25 }}
-              className="relative max-w-4xl max-h-[75vh] w-full aspect-[4/3] z-10"
+              transition={{ duration: 0.2 }}
+              className="relative max-w-5xl max-h-[80vh] w-full aspect-[4/3] z-10"
             >
               <Image
-                src={filteredItems[lightboxIndex].image}
-                alt={filteredItems[lightboxIndex].title}
+                src={galleryItems[lightboxIndex].image}
+                alt={galleryItems[lightboxIndex].title}
                 width={1200}
                 height={900}
                 className="w-full h-full object-contain"
@@ -225,22 +257,19 @@ export default function Gallery() {
             {/* Right navigation arrow */}
             <button
               onClick={handleNext}
-              className="absolute right-4 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer"
+              className="absolute right-4 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-[#e63946] w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full transition-colors z-20 cursor-pointer border border-white/10"
               aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
 
             {/* Caption Banner */}
-            <div className="absolute bottom-6 left-0 w-full text-center text-white z-20">
-              <span className="text-[#e63946] text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-black/60 px-3 py-1 rounded-full border border-[#e63946]/40">
-                {filteredItems[lightboxIndex].category}
-              </span>
-              <h4 className="text-base sm:text-xl font-bold font-display mt-2">
-                {filteredItems[lightboxIndex].title}
+            <div className="absolute bottom-6 left-0 w-full text-center text-white z-20 px-4">
+              <h4 className="text-lg sm:text-2xl font-bold font-display">
+                {galleryItems[lightboxIndex].title}
               </h4>
-              <p className="text-slate-400 text-xs mt-1">
-                Image {lightboxIndex + 1} of {filteredItems.length}
+              <p className="text-slate-400 text-xs sm:text-sm mt-1">
+                Image {lightboxIndex + 1} of {galleryItems.length}
               </p>
             </div>
 
