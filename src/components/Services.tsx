@@ -185,8 +185,8 @@ export default function Services() {
                 onClick={() => setActiveTab(key)}
                 className={`px-5 py-3.5 rounded-xl text-sm font-bold transition-all duration-300 relative cursor-pointer min-h-[48px] ${
                   activeTab === key
-                    ? "bg-[#e63946] text-white shadow-md"
-                    : "text-slate-700 hover:text-[#e63946] hover:bg-slate-100"
+                    ? "bg-[#dc2626] text-white shadow-md"
+                    : "text-slate-800 hover:text-[#dc2626] hover:bg-slate-100"
                 }`}
               >
                 {servicesData[key].title}
@@ -196,7 +196,7 @@ export default function Services() {
         </div>
 
         {/* Active Tab description */}
-        <div className="text-center max-w-2xl mx-auto mb-10 -mt-4 text-xs sm:text-sm text-slate-600 italic">
+        <div className="text-center max-w-2xl mx-auto mb-10 -mt-4 text-xs sm:text-sm text-slate-700 italic">
           &ldquo;{activeCategory.desc}&rdquo;
         </div>
 
@@ -217,7 +217,7 @@ export default function Services() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl shadow-md border border-[#e5e5e5] overflow-hidden flex flex-col group hover:shadow-xl hover:border-[#e63946] transition-all duration-300"
+                className="bg-white rounded-2xl shadow-md border border-[#e5e5e5] overflow-hidden flex flex-col group hover:shadow-xl hover:border-[#dc2626] transition-all duration-300"
               >
                 <div className="relative h-64 w-full overflow-hidden bg-slate-100">
                   <Image
@@ -231,7 +231,7 @@ export default function Services() {
                   />
                   <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                     {item.tags.slice(0, 2).map((tg) => (
-                      <span key={tg} className="bg-[#e63946] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+                      <span key={tg} className="bg-[#dc2626] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
                         {tg}
                       </span>
                     ))}
@@ -241,13 +241,13 @@ export default function Services() {
                 {/* Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-bold text-xl text-[#000000] font-display mb-3 group-hover:text-[#e63946] transition-colors">
+                    <h3 className="font-bold text-xl text-[#000000] font-display mb-3 group-hover:text-[#dc2626] transition-colors">
                       {item.name}
                     </h3>
                     <ul className="space-y-2 mb-6">
                       {item.bulletPoints.map((pt, i) => (
-                        <li key={i} className="flex items-start text-slate-700 text-xs sm:text-sm">
-                          <Check className="w-4.5 h-4.5 text-[#e63946] shrink-0 mr-2 mt-0.5" />
+                        <li key={i} className="flex items-start text-slate-800 text-xs sm:text-sm">
+                          <Check className="w-4.5 h-4.5 text-[#dc2626] shrink-0 mr-2 mt-0.5" />
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -258,7 +258,8 @@ export default function Services() {
                   <div className="space-y-3">
                     <button
                       onClick={() => setSelectedService(item)}
-                      className="w-full flex items-center justify-center space-x-1.5 py-3 bg-[#f9f9f9] border border-[#e63946] text-[#e63946] hover:bg-[#e63946] hover:text-white font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
+                      className="w-full flex items-center justify-center space-x-1.5 py-3 bg-[#f9f9f9] border border-[#dc2626] text-[#dc2626] hover:bg-[#dc2626] hover:text-white font-semibold text-xs rounded-lg transition-all cursor-pointer min-h-[48px]"
+                      aria-label={`Learn technical details about ${item.name}`}
                     >
                       <Info className="w-4 h-4" />
                       <span>Learn Technical Details</span>
@@ -267,7 +268,8 @@ export default function Services() {
                     <div className="grid grid-cols-2 gap-2">
                       <a
                         href="tel:+918637607910"
-                        className="flex items-center justify-center space-x-1 bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#e63946] min-h-[48px]"
+                        className="flex items-center justify-center space-x-1 bg-[#dc2626] hover:bg-[#b91c1c] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#dc2626] min-h-[48px]"
+                        aria-label={`Call Sravani Netting for ${item.name}`}
                       >
                         <Phone className="w-3.5 h-3.5 fill-white" />
                         <span>Call</span>
@@ -277,6 +279,7 @@ export default function Services() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center space-x-1 bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-3 rounded-lg text-xs font-bold shadow-sm transition-colors border border-[#25D366] min-h-[48px]"
+                        aria-label={`WhatsApp quote for ${item.name}`}
                       >
                         <MessageCircle className="w-3.5 h-3.5 fill-white" />
                         <span>WhatsApp</span>
@@ -299,7 +302,8 @@ export default function Services() {
           <div className="flex flex-wrap gap-3">
             <a
               href="tel:+918637607910"
-              className="bg-[#e63946] hover:bg-[#dc2626] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#e63946]"
+              className="bg-[#dc2626] hover:bg-[#b91c1c] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#dc2626]"
+              aria-label="Call Sravani Netting Hotline"
             >
               📞 Call +91 86376 07910
             </a>
@@ -308,6 +312,7 @@ export default function Services() {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-5 rounded-lg text-sm font-bold transition-all shadow-sm border border-[#25D366]"
+              aria-label="Request WhatsApp Quote for Safety Nets"
             >
               💬 WhatsApp Quote
             </a>

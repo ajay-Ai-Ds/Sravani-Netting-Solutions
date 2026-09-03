@@ -2,20 +2,20 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-primary: #e63946;
+  --color-primary: #dc2626;
   --color-primary-light: #f9f9f9;
-  --color-primary-dark: #dc2626;
+  --color-primary-dark: #b91c1c;
   --color-secondary: #000000;
-  --color-accent: #e63946;
-  --color-accent-dark: #dc2626;
-  --color-call-red: #e63946;
-  --color-call-red-hover: #dc2626;
+  --color-accent: #dc2626;
+  --color-accent-dark: #b91c1c;
+  --color-call-red: #dc2626;
+  --color-call-red-hover: #b91c1c;
   --color-text-dark: #000000;
   --color-text-light: #ffffff;
   --color-border: #e5e5e5;
   
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-sans: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), 'Outfit', 'Inter', system-ui, sans-serif;
   
   --animate-float: float 3s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;

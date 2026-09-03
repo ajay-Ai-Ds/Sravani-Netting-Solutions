@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: Props) {
         
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="mb-10 text-center">
-            <time className="text-sm font-bold text-[#e63946] tracking-wider uppercase mb-4 block">
+            <time className="text-sm font-bold text-[#dc2626] tracking-wider uppercase mb-4 block">
               {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </time>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#000000] font-display mb-6">
@@ -112,18 +112,18 @@ export default async function BlogPostPage({ params }: Props) {
           </header>
 
           <div 
-            className="prose prose-slate prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[#e63946] hover:prose-a:text-[#dc2626] prose-img:rounded-xl"
+            className="prose prose-slate prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-[#dc2626] hover:prose-a:text-[#dc2626] prose-img:rounded-xl"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
           {/* Call To Action Box */}
           <div className="mt-12 p-8 bg-[#000000] text-white rounded-3xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#333333]">
             <div>
-              <h3 className="text-2xl font-bold font-display text-[#e63946]">Need Installation in Chennai?</h3>
+              <h3 className="text-2xl font-bold font-display text-[#dc2626]">Need Installation in Chennai?</h3>
               <p className="text-slate-300 mt-1 text-sm">Get free site measurement & same-day installation from Sravani Netting Solutions.</p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <a href="tel:+918637607910" className="bg-[#e63946] hover:bg-[#dc2626] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
+              <a href="tel:+918637607910" className="bg-[#dc2626] hover:bg-[#dc2626] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md">
                 Call Now
               </a>
               <a href="https://wa.me/918637607910" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md border border-[#25D366]">

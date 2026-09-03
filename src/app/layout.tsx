@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { Inter, Outfit } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
+  weight: ["600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Sravani Netting Solutions Chennai | Premium Balcony Safety Nets & Invisible Grills",
@@ -166,12 +181,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scroll-smooth h-full antialiased"
+      className={`${inter.variable} ${outfit.variable} scroll-smooth h-full antialiased`}
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preload" as="image" href="/images/balcony.webp" type="image/webp" fetchPriority="high" />
         <script
@@ -182,48 +194,74 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchemas) }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87"
-          strategy="lazyOnload"
-        />
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HPZMZJCT87');
-            gtag('config', 'AW-18291286869');
-          `}
-        </Script>
-      </head>
-      <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans pb-[60px] md:pb-0 overflow-x-hidden">
-        
-        {/* Event snippet for Contact conversion page */}
-        <Script id="google-conversion" strategy="lazyOnload">
-          {`
-            function gtag_report_conversion(url) {
-              var callback = function () {
-                if (typeof(url) != 'undefined') {
+        {/* Global Conversion Helper Stub */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              window.gtag_report_conversion = function(url) {
+                if (typeof window.gtag === 'function') {
+                  window.gtag('event', 'conversion', {
+                    'send_to': 'AW-18291286869/gdBgCIWs38wcENXG-5FE',
+                    'event_callback': function() {
+                      if (url) window.location = url;
+                    }
+                  });
+                } else if (url) {
                   window.location = url;
                 }
+                return false;
               };
-              gtag('event', 'conversion', {
-                  'send_to': 'AW-18291286869/gdBgCIWs38wcENXG-5FE',
-                  'event_callback': callback
-              });
-              return false;
-            }
-          `}
-        </Script>
-
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="lazyOnload">
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-full bg-slate-50 text-slate-900 flex flex-col font-sans pb-[60px] md:pb-0 overflow-x-hidden">
+        {/* Deferred GTM & Analytics Loading to preserve Main Thread and TBT */}
+        <Script
+          id="deferred-analytics"
+          strategy="lazyOnload"
+        >
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-K6KCTMS8');
+            (function() {
+              function loadAnalytics() {
+                if (window._analyticsLoaded) return;
+                window._analyticsLoaded = true;
+
+                // Load GTM
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-K6KCTMS8');
+
+                // Load Google Tag for GA4 & Google Ads
+                var gtagScript = document.createElement('script');
+                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-HPZMZJCT87';
+                gtagScript.async = true;
+                gtagScript.onload = function() {
+                  gtag('js', new Date());
+                  gtag('config', 'G-HPZMZJCT87');
+                  gtag('config', 'AW-18291286869');
+                };
+                document.head.appendChild(gtagScript);
+              }
+
+              // Load when idle or after delay or on interaction
+              if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(function() {
+                  setTimeout(loadAnalytics, 2000);
+                });
+              } else {
+                setTimeout(loadAnalytics, 2500);
+              }
+
+              ['scroll', 'touchstart', 'mousemove', 'keydown'].forEach(function(evt) {
+                window.addEventListener(evt, loadAnalytics, { once: true, passive: true });
+              });
+            })();
           `}
         </Script>
 

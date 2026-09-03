@@ -170,9 +170,9 @@ export default function Gallery() {
         <div className="text-center max-w-4xl mx-auto mb-14">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-display leading-tight">
             Safety You Can Trust — <br className="hidden sm:inline" />
-            <span className="text-[#e63946]">Premium Nets for Every Home.</span>
+            <span className="text-[#dc2626]">Premium Nets for Every Home.</span>
           </h2>
-          <div className="h-1.5 bg-[#e63946] w-24 mx-auto mt-5 rounded-full" />
+          <div className="h-1.5 bg-[#dc2626] w-24 mx-auto mt-5 rounded-full" />
         </div>
 
         {/* Clean Gallery Grid */}
@@ -185,13 +185,13 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: (index % 3) * 0.05 }}
-                className="relative group rounded-3xl overflow-hidden aspect-[4/3] w-full bg-slate-900 border border-slate-200 shadow-md cursor-pointer hover:shadow-2xl hover:border-[#e63946]/50 transition-all duration-300 focus:outline-none text-left"
+                className="relative group rounded-3xl overflow-hidden aspect-[4/3] w-full bg-slate-900 border border-slate-200 shadow-md cursor-pointer hover:shadow-2xl hover:border-[#dc2626]/50 transition-all duration-300 focus:outline-none text-left"
                 onClick={() => setLightboxIndex(index)}
-                aria-label={`View ${item.title}`}
+                aria-label={`View photo of ${item.title} in full size`}
               >
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} installed by Sravani Netting Solutions for Chennai client`}
                   width={600}
                   height={450}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"

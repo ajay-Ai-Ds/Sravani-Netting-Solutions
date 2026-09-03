@@ -156,7 +156,7 @@ export default function Reviews() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#dc2626]">
             Customer Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
@@ -165,7 +165,7 @@ export default function Reviews() {
           <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Read real feedback from homeowners across Chennai who secured their spaces with us.
           </p>
-          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#dc2626] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Reviews Slider Container */}
@@ -183,7 +183,7 @@ export default function Reviews() {
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Google Style Header */}
                   <div className="flex items-center space-x-3 mb-4 shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-[#e63946] text-white font-bold flex items-center justify-center font-display shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-[#dc2626] text-white font-bold flex items-center justify-center font-display shadow-sm">
                       {rev.name.charAt(0)}
                     </div>
                     <div>
@@ -195,7 +195,7 @@ export default function Reviews() {
                   {/* Stars Rating */}
                   <div className="flex items-center space-x-1 mb-3 shrink-0">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#e63946] stroke-[#e63946]" />
+                      <Star key={i} className="w-4 h-4 fill-[#dc2626] stroke-[#dc2626]" />
                     ))}
                     <span className="text-slate-500 text-xs ml-1.5">{rev.date}</span>
                   </div>
@@ -209,7 +209,7 @@ export default function Reviews() {
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-[#e5e5e5] flex items-center text-slate-500 text-xs">
-                  <MessageSquare className="w-3.5 h-3.5 mr-1 text-[#e63946]" />
+                  <MessageSquare className="w-3.5 h-3.5 mr-1 text-[#dc2626]" />
                   <span>Posted on Google Local Business</span>
                 </div>
               </motion.div>
@@ -226,7 +226,7 @@ export default function Reviews() {
                 aria-label={`Go to slide ${i + 1}`}
               >
                 <span className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentIndex === i ? "bg-[#e63946] w-6" : "bg-slate-300 group-hover:bg-[#e63946]/50"
+                  currentIndex === i ? "bg-[#dc2626] w-6" : "bg-slate-300 group-hover:bg-[#dc2626]/50"
                 }`} />
               </button>
             ))}
@@ -235,7 +235,7 @@ export default function Reviews() {
 
         {/* Global Summary Badge */}
         <div className="mt-12 text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-[#e63946] text-white px-6 py-3.5 rounded-full text-sm font-semibold shadow-md border border-[#e63946]">
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 bg-[#dc2626] text-white px-6 py-3.5 rounded-full text-sm font-semibold shadow-md border border-[#dc2626]">
             <span>Overall Google Rating:</span>
             <div className="flex items-center gap-1.5">
               <span className="font-extrabold text-base text-white">5.0 / 5.0</span>

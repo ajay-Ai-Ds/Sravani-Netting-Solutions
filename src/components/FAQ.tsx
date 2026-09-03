@@ -79,7 +79,7 @@ export default function FAQ() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#dc2626]">
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
@@ -88,7 +88,7 @@ export default function FAQ() {
           <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Read through our top 10 detailed FAQs to learn everything about installation, durability, and cost in Chennai.
           </p>
-          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#dc2626] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Accordion List */}
@@ -104,15 +104,15 @@ export default function FAQ() {
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
-                className="w-full flex items-center justify-between p-5 text-left text-[#000000] hover:text-[#e63946] font-bold text-sm sm:text-base font-display transition-colors duration-200 cursor-pointer"
+                className="w-full flex items-center justify-between p-5 text-left text-[#000000] hover:text-[#dc2626] font-bold text-sm sm:text-base font-display transition-colors duration-200 cursor-pointer"
               >
                 <span className="flex items-center space-x-3 pr-4">
-                  <HelpCircle className="w-5 h-5 text-[#e63946] shrink-0" />
+                  <HelpCircle className="w-5 h-5 text-[#dc2626] shrink-0" />
                   <span>{faq.q}</span>
                 </span>
                 <ChevronDown
                   className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${
-                    activeIndex === index ? "rotate-185 text-[#e63946]" : ""
+                    activeIndex === index ? "rotate-185 text-[#dc2626]" : ""
                   }`}
                 />
               </button>
@@ -147,7 +147,7 @@ export default function FAQ() {
           </p>
           <a
             href="tel:+918637607910"
-            className="inline-flex items-center space-x-1.5 text-[#e63946] hover:text-[#dc2626] font-bold text-sm sm:text-base mt-2"
+            className="inline-flex items-center space-x-1.5 text-[#dc2626] hover:text-[#dc2626] font-bold text-sm sm:text-base mt-2"
           >
             <span>Call Customer Support:</span>
             <span className="underline">+91 86376 07910</span>

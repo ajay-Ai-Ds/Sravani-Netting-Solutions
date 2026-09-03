@@ -132,7 +132,6 @@ export default function Hero() {
 
   const handleTouchStart = (e: React.TouchEvent) => {
     const target = e.target as HTMLElement;
-    // Don't trigger swipe changes if user is interacting with form elements or buttons
     if (target.closest("form") || target.closest("button") || target.closest("a")) {
       return;
     }
@@ -187,421 +186,283 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className="relative min-h-[75vh] lg:min-h-screen flex items-center pt-36 pb-8 sm:pt-40 lg:pt-48 lg:pb-12 overflow-hidden bg-slate-50"
+        className="relative min-h-[75vh] lg:min-h-screen flex items-center pt-36 pb-12 sm:pt-40 lg:pt-48 lg:pb-16 overflow-hidden bg-slate-950"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-      {/* Standard HTML style tag to inject responsive styles for background overlay */}
-      <style>{`
-        .hero-gradient-overlay {
-          background: rgba(0, 0, 0, 0.5);
-        }
-      `}</style>
-
-      {/* Background Image Carousel (Smooth continuous Ken Burns and crossfade) */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={currentSlide}
-            initial={currentSlide === 0 ? false : { opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 1.08 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              opacity: { duration: 0.8, ease: "easeInOut" },
-              scale: { duration: 5.2, ease: "linear" }
-            }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <Image
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].title}
-              fill
-              priority={currentSlide === 0}
-              fetchPriority={currentSlide === 0 ? "high" : "auto"}
-              loading={currentSlide === 0 ? undefined : "lazy"}
-              quality={75}
-              className="w-full h-full object-cover object-center"
-              style={{ filter: "saturate(1.05) brightness(0.92) contrast(1.02)" }}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
-            />
-          </motion.div>
-        </AnimatePresence>
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 z-10 hero-gradient-overlay pointer-events-none" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-          {/* Hero Left Content */}
-          <div className="lg:col-span-8 space-y-6">
-            <div className="min-h-[36px] sm:min-h-[40px] flex items-center">
-              <motion.span
-                key={`tag-${currentSlide}`}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider bg-[#e63946] text-white shadow-md whitespace-nowrap"
-              >
-                <Shield className="w-4 h-4 text-white" />
-                {slides[currentSlide].tagline}
-              </motion.span>
+        {/* Background Images with smooth transitions */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {slides.map((slide, idx) => (
+            <div
+              key={slide.image}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+                currentSlide === idx ? "opacity-100 z-10 scale-105 transition-transform duration-[6000ms]" : "opacity-0 z-0 scale-100"
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={idx === 0}
+                fetchPriority={idx === 0 ? "high" : "auto"}
+                loading={idx === 0 ? undefined : "lazy"}
+                quality={idx === 0 ? 80 : 70}
+                className="w-full h-full object-cover object-center"
+                style={{ filter: "saturate(1.05) brightness(0.85) contrast(1.02)" }}
+                sizes="100vw"
+              />
             </div>
+          ))}
+          {/* Dark gradient overlay */}
+          <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/85 via-black/60 to-black/75 pointer-events-none" />
+        </div>
 
-            <div className="min-h-[140px] sm:min-h-[170px] lg:min-h-[200px] flex flex-col justify-center text-left">
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={`title-${currentSlide}`}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-3xl sm:text-5.5xl lg:text-6.5xl font-extrabold tracking-tight font-display leading-[1.1] text-white"
+        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+            {/* Hero Left Content */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="min-h-[36px] sm:min-h-[40px] flex items-center">
+                <span
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider bg-[#dc2626] text-white shadow-md whitespace-nowrap"
+                >
+                  <Shield className="w-4 h-4 text-white" />
+                  {slides[currentSlide].tagline}
+                </span>
+              </div>
+
+              <div className="min-h-[130px] sm:min-h-[160px] lg:min-h-[180px] flex flex-col justify-center text-left">
+                <h1
+                  className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display leading-[1.12] text-white transition-all duration-300"
                   style={{ textShadow: "0px 2px 14px rgba(0,0,0,0.85), 0px 1px 3px rgba(0,0,0,0.9)" }}
                 >
                   {slides[currentSlide].titlePrefix}
-                  <span className="text-[#e63946]">
+                  <span className="text-[#ef4444]">
                     {slides[currentSlide].titleHighlight}
                   </span>
                   {slides[currentSlide].titleSuffix}
-                </motion.h1>
-              </AnimatePresence>
-            </div>
+                </h1>
+              </div>
 
-            <div className="min-h-[60px] sm:min-h-[70px] lg:min-h-[80px]">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={`desc-${currentSlide}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-base sm:text-xl lg:text-2xl text-slate-100 font-medium leading-relaxed max-w-2xl"
+              <div className="min-h-[50px] sm:min-h-[60px]">
+                <p
+                  className="text-base sm:text-xl text-slate-100 font-medium leading-relaxed max-w-2xl transition-opacity duration-300"
                   style={{ textShadow: "0px 2px 8px rgba(0,0,0,0.85)" }}
                 >
                   {slides[currentSlide].subtitle}
-                </motion.p>
-              </AnimatePresence>
-            </div>
-
-            {/* Ratings & Trust Indicators */}
-            <div className="flex flex-wrap gap-y-3 gap-x-5 pt-4 text-sm sm:text-base text-slate-200 border-t border-white/20">
-              <div className="flex items-center space-x-2">
-                <div className="flex text-[#e63946]">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#e63946] stroke-[#e63946]" />
-                  ))}
-                </div>
-                <span className="font-extrabold text-slate-100" style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.6)" }}>5.0 / 5.0 Rating</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-[#e63946]" />
-                <span className="font-extrabold text-slate-100" style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.6)" }}>1000+ Happy Clients</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-[#e63946]" />
-                <span className="font-extrabold text-slate-100" style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.6)" }}>Free Site Inspection</span>
-              </div>
-            </div>
-
-            {/* Carousel navigation indicators & arrows */}
-            <div className="flex items-center space-x-4 pt-2">
-              <div className="flex space-x-1.5">
-                <button
-                  onClick={prevSlide}
-                  className="w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#e63946] text-white border border-white/20 shadow-sm transition-colors cursor-pointer"
-                  aria-label="Previous Slide"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="w-11 h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#e63946] text-white border border-white/20 shadow-sm transition-colors cursor-pointer"
-                  aria-label="Next Slide"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="flex space-x-1 items-center">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className="w-8 h-8 flex items-center justify-center cursor-pointer group"
-                    aria-label={`Go to slide ${index + 1}`}
-                  >
-                    <span
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === index ? "bg-[#e63946] w-7" : "bg-white/40 w-2 group-hover:bg-white/60"
-                      }`}
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Right Content - Enquiry Form (Desktop Only) */}
-          <div className="lg:col-span-4 w-full hidden lg:block">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-slate-900/95 backdrop-blur-xl rounded-2xl p-5 shadow-2xl relative border border-slate-700/60 text-white"
-            >
-              {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-3.5">
-                  <div className="text-center pb-0.5">
-                    <h2 className="text-lg sm:text-xl font-bold text-white font-display">
-                      Book Free Inspection
-                    </h2>
-                    <p className="text-slate-300 text-xs mt-0.5">
-                      Get quote & site visit in 15 mins!
-                    </p>
-                  </div>
-
-                  <div>
-                    <label htmlFor="hero-name" className="sr-only">Your Name</label>
-                    <input
-                      id="hero-name"
-                      type="text"
-                      required
-                      placeholder="Your Name *"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
-                      <input
-                        id="hero-phone"
-                        type="tel"
-                        required
-                        placeholder="Phone Number *"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="w-full px-3 py-2 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="hero-location" className="sr-only">Your Location</label>
-                      <input
-                        id="hero-location"
-                        type="text"
-                        placeholder="Your Location"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        className="w-full px-3 py-2 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="hero-service" className="sr-only">Service Needed</label>
-                    <select
-                      id="hero-service"
-                      value={service}
-                      onChange={(e) => setService(e.target.value)}
-                      className="w-full px-3 py-2 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                    >
-                      {servicesList.map((srv) => (
-                        <option key={srv} value={srv} className="bg-slate-950 text-white text-sm">
-                          {srv}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="hero-message" className="sr-only">Message (Optional)</label>
-                    <textarea
-                      id="hero-message"
-                      rows={1}
-                      placeholder="Message (e.g. dimensions)"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-3 py-2 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-[#e63946] hover:bg-[#dc2626] text-white py-2.5 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all cursor-pointer border border-[#e63946]"
-                  >
-                    <span>Submit Enquiry</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-
-                  <div className="grid grid-cols-2 gap-3 pt-1">
-                    <a
-                      href="tel:+918637607910"
-                      className="flex items-center justify-center space-x-1.5 bg-[#e63946] hover:bg-[#dc2626] text-white py-2 rounded-lg text-xs font-semibold border border-[#e63946] transition-colors"
-                    >
-                      <Phone className="w-3.5 h-3.5 fill-white" />
-                      <span>Call Now</span>
-                    </a>
-                    <a
-                      href={whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-1.5 bg-[#25D366] hover:bg-[#1DA851] text-white py-2 rounded-lg text-xs font-semibold border border-[#25D366] transition-colors"
-                    >
-                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.381 9.805-9.786.002-2.618-1.01-5.074-2.854-6.921C16.38 2.052 13.933.996 11.999.996 6.596.996 2.197 5.379 2.195 10.785c-.001 1.512.409 2.99 1.182 4.298l-.994 3.63 3.731-.973-1.066.614zm11.332-6.52c-.274-.136-1.62-.8-1.87-.892-.252-.09-.435-.136-.617.137-.183.272-.708.892-.868 1.074-.16.183-.32.204-.593.068-1.579-.79-2.73-1.37-3.818-3.23-.288-.492.288-.456.822-1.52.091-.183.046-.343-.023-.48-.068-.136-.617-1.484-.846-2.033-.223-.536-.469-.463-.617-.47l-.527-.008c-.183 0-.48.069-.731.343-.252.274-.96.937-.96 2.285 0 1.348.982 2.651 1.119 2.833.137.183 1.933 2.951 4.682 4.141.654.282 1.165.451 1.564.578.658.209 1.258.18 1.732.109.528-.079 1.62-.663 1.85-1.302.23-.639.23-1.187.16-1.302-.07-.116-.275-.183-.55-.32z" />
-                      </svg>
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-                </form>
-              ) : (
-                <div className="py-10 text-center space-y-4">
-                  <CheckCircle className="w-16 h-16 text-[#e63946] mx-auto animate-bounce" />
-                  <h3 className="text-xl font-bold text-white font-display">Thank you!</h3>
-                  <p className="text-slate-300 text-xs max-w-xs mx-auto">
-                    Your request has been received. Our team will contact you shortly.
-                  </p>
-                </div>
-              )}
-            </motion.div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    {/* Mobile Enquiry Form - Rendered outside the hero section only on mobile */}
-    <div className="lg:hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-t border-slate-800 py-10 px-4">
-      <div className="max-w-md mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.5 }}
-          className="bg-slate-800/80 backdrop-blur-xl rounded-2xl p-6 shadow-2xl relative border border-slate-700/60"
-        >
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="text-center pb-1">
-                <h2 className="text-xl font-bold text-white font-display">
-                  Book Free Inspection
-                </h2>
-                <p className="text-slate-300 text-xs mt-1">
-                  Get a quotation and site visit call-back in 15 mins!
                 </p>
               </div>
 
-              <div>
-                <label htmlFor="mobile-hero-name" className="sr-only">Your Name *</label>
-                <input
-                  id="mobile-hero-name"
-                  type="text"
-                  required
-                  placeholder="Your Name *"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="mobile-hero-phone" className="sr-only">Phone Number *</label>
-                  <input
-                    id="mobile-hero-phone"
-                    type="tel"
-                    required
-                    placeholder="Phone Number *"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="mobile-hero-location" className="sr-only">Your Location</label>
-                  <input
-                    id="mobile-hero-location"
-                    type="text"
-                    placeholder="Your Location"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="w-full px-3.5 py-2.5 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="mobile-hero-service" className="sr-only">Service Needed</label>
-                <select
-                  id="mobile-hero-service"
-                  value={service}
-                  onChange={(e) => setService(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
-                >
-                  {servicesList.map((srv) => (
-                    <option key={srv} value={srv} className="bg-slate-950 text-white text-sm">
-                      {srv}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="mobile-hero-message" className="sr-only">Message (Optional)</label>
-                <textarea
-                  id="mobile-hero-message"
-                  rows={2}
-                  placeholder="Message (e.g. dimensions)"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-3.5 py-2.5 bg-slate-900/90 border border-[#e5e5e5]/30 rounded-lg text-[16px] text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#e63946] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all cursor-pointer border border-[#e63946]"
-              >
-                <span>Submit Enquiry</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <div className="grid grid-cols-2 gap-3 pt-1">
+              {/* Quick Mobile Action Buttons */}
+              <div className="flex sm:hidden flex-wrap gap-3 pt-2">
                 <a
                   href="tel:+918637607910"
-                  className="flex items-center justify-center space-x-1.5 bg-[#e63946] hover:bg-[#dc2626] text-white py-2.5 rounded-lg text-xs font-semibold border border-[#e63946] transition-colors"
+                  className="flex-1 flex items-center justify-center space-x-1.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white py-3 px-4 rounded-xl text-sm font-bold shadow-lg active:scale-95 transition-all border border-[#dc2626]"
+                  aria-label="Call +91 86376 07910 for instant quote"
                 >
-                  <Phone className="w-3.5 h-3.5 fill-white" />
+                  <Phone className="w-4 h-4 fill-white" />
                   <span>Call Now</span>
                 </a>
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-1.5 bg-[#25D366] hover:bg-[#1DA851] text-white py-2.5 rounded-lg text-xs font-semibold border border-[#25D366] transition-colors"
+                  className="flex-1 flex items-center justify-center space-x-1.5 bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-4 rounded-xl text-sm font-bold shadow-lg active:scale-95 transition-all border border-[#25D366]"
+                  aria-label="WhatsApp Sravani Netting Solutions for free estimate"
                 >
-                  <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.381 9.805-9.786.002-2.618-1.01-5.074-2.854-6.921C16.38 2.052 13.933.996 11.999.996 6.596.996 2.197 5.379 2.195 10.785c-.001 1.512.409 2.99 1.182 4.298l-.994 3.63 3.731-.973-1.066.614zm11.332-6.52c-.274-.136-1.62-.8-1.87-.892-.252-.09-.435-.136-.617.137-.183.272-.708.892-.868 1.074-.16.183-.32.204-.593.068-1.579-.79-2.73-1.37-3.818-3.23-.288-.492.288-.456.822-1.52.091-.183.046-.343-.023-.48-.068-.136-.617-1.484-.846-2.033-.223-.536-.469-.463-.617-.47l-.527-.008c-.183 0-.48.069-.731.343-.252.274-.96.937-.96 2.285 0 1.348.982 2.651 1.119 2.833.137.183 1.933 2.951 4.682 4.141.654.282 1.165.451 1.564.578.658.209 1.258.18 1.732.109.528-.079 1.62-.663 1.85-1.302.23-.639.23-1.187.16-1.302-.07-.116-.275-.183-.55-.32z" />
                   </svg>
                   <span>WhatsApp</span>
                 </a>
               </div>
-            </form>
-          ) : (
-            <div className="py-12 text-center space-y-4">
-              <CheckCircle className="w-16 h-16 text-[#e63946] mx-auto animate-bounce" />
-              <h3 className="text-2xl font-bold text-white font-display">Thank you!</h3>
-              <p className="text-slate-300 text-sm max-w-xs mx-auto">
-                Your request has been received. Our team will contact you shortly.
-              </p>
+
+              {/* Ratings & Trust Indicators */}
+              <div className="flex flex-wrap gap-y-3 gap-x-5 pt-4 text-sm sm:text-base text-slate-200 border-t border-white/20">
+                <div className="flex items-center space-x-2">
+                  <div className="flex text-amber-400">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-amber-400 stroke-amber-400" />
+                    ))}
+                  </div>
+                  <span className="font-extrabold text-slate-100" style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.6)" }}>5.0 / 5.0 Rating</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <span className="font-extrabold text-slate-100" style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.6)" }}>1000+ Happy Clients</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <span className="font-extrabold text-slate-100" style={{ textShadow: "0px 1px 2px rgba(0,0,0,0.6)" }}>Free Site Inspection</span>
+                </div>
+              </div>
+
+              {/* Carousel navigation indicators & arrows */}
+              <div className="flex items-center space-x-4 pt-2">
+                <div className="flex space-x-1.5">
+                  <button
+                    onClick={prevSlide}
+                    className="w-11 h-11 flex items-center justify-center rounded-full bg-white/15 hover:bg-[#dc2626] text-white border border-white/25 shadow-sm transition-colors cursor-pointer"
+                    aria-label="Previous Slide"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="w-11 h-11 flex items-center justify-center rounded-full bg-white/15 hover:bg-[#dc2626] text-white border border-white/25 shadow-sm transition-colors cursor-pointer"
+                    aria-label="Next Slide"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+
+                <div className="flex space-x-1 items-center">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className="w-8 h-8 flex items-center justify-center cursor-pointer group"
+                      aria-label={`Go to slide ${index + 1}`}
+                    >
+                      <span
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          currentSlide === index ? "bg-[#dc2626] w-7" : "bg-white/40 w-2 group-hover:bg-white/60"
+                        }`}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-          )}
-        </motion.div>
+
+            {/* Hero Right Content - Unified Responsive Enquiry Form */}
+            <div className="lg:col-span-5 w-full">
+              <div className="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-5 sm:p-6 shadow-2xl relative border border-slate-700/60 text-white">
+                {!isSubmitted ? (
+                  <form onSubmit={handleSubmit} className="space-y-3.5">
+                    <div className="text-center pb-0.5">
+                      <h2 className="text-lg sm:text-xl font-bold text-white font-display">
+                        Book Free Inspection
+                      </h2>
+                      <p className="text-slate-300 text-xs mt-0.5">
+                        Get quote & same-day site visit call back in 15 mins!
+                      </p>
+                    </div>
+
+                    <div>
+                      <label htmlFor="hero-name" className="sr-only">Your Name</label>
+                      <input
+                        id="hero-name"
+                        type="text"
+                        required
+                        placeholder="Your Name *"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full px-3 py-2.5 bg-slate-950/80 border border-slate-700 rounded-lg text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
+                        <input
+                          id="hero-phone"
+                          type="tel"
+                          required
+                          placeholder="Phone Number *"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          className="w-full px-3 py-2.5 bg-slate-950/80 border border-slate-700 rounded-lg text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="hero-location" className="sr-only">Your Location</label>
+                        <input
+                          id="hero-location"
+                          type="text"
+                          placeholder="Your Location in Chennai"
+                          value={location}
+                          onChange={(e) => setLocation(e.target.value)}
+                          className="w-full px-3 py-2.5 bg-slate-950/80 border border-slate-700 rounded-lg text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="hero-service" className="sr-only">Service Needed</label>
+                      <select
+                        id="hero-service"
+                        value={service}
+                        onChange={(e) => setService(e.target.value)}
+                        className="w-full px-3 py-2.5 bg-slate-950/80 border border-slate-700 rounded-lg text-sm sm:text-base text-white focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
+                      >
+                        {servicesList.map((srv) => (
+                          <option key={srv} value={srv} className="bg-slate-950 text-white">
+                            {srv}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="hero-message" className="sr-only">Message (Optional)</label>
+                      <textarea
+                        id="hero-message"
+                        rows={1}
+                        placeholder="Message (e.g. Balcony size, area)"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="w-full px-3 py-2 bg-slate-950/80 border border-slate-700 rounded-lg text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all resize-none"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transition-all cursor-pointer border border-[#dc2626]"
+                    >
+                      <span>Submit Free Inspection Request</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+
+                    <div className="grid grid-cols-2 gap-3 pt-1">
+                      <a
+                        href="tel:+918637607910"
+                        className="flex items-center justify-center space-x-1.5 bg-[#dc2626] hover:bg-[#b91c1c] text-white py-2.5 rounded-lg text-xs font-semibold border border-[#dc2626] transition-colors"
+                        aria-label="Direct Phone Call"
+                      >
+                        <Phone className="w-3.5 h-3.5 fill-white" />
+                        <span>Call Directly</span>
+                      </a>
+                      <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center space-x-1.5 bg-[#25D366] hover:bg-[#1DA851] text-white py-2.5 rounded-lg text-xs font-semibold border border-[#25D366] transition-colors"
+                        aria-label="Direct WhatsApp Message"
+                      >
+                        <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.403.002 9.803-4.381 9.805-9.786.002-2.618-1.01-5.074-2.854-6.921C16.38 2.052 13.933.996 11.999.996 6.596.996 2.197 5.379 2.195 10.785c-.001 1.512.409 2.99 1.182 4.298l-.994 3.63 3.731-.973-1.066.614zm11.332-6.52c-.274-.136-1.62-.8-1.87-.892-.252-.09-.435-.136-.617.137-.183.272-.708.892-.868 1.074-.16.183-.32.204-.593.068-1.579-.79-2.73-1.37-3.818-3.23-.288-.492.288-.456.822-1.52.091-.183.046-.343-.023-.48-.068-.136-.617-1.484-.846-2.033-.223-.536-.469-.463-.617-.47l-.527-.008c-.183 0-.48.069-.731.343-.252.274-.96.937-.96 2.285 0 1.348.982 2.651 1.119 2.833.137.183 1.933 2.951 4.682 4.141.654.282 1.165.451 1.564.578.658.209 1.258.18 1.732.109.528-.079 1.62-.663 1.85-1.302.23-.639.23-1.187.16-1.302-.07-.116-.275-.183-.55-.32z" />
+                        </svg>
+                        <span>WhatsApp</span>
+                      </a>
+                    </div>
+                  </form>
+                ) : (
+                  <div className="py-10 text-center space-y-4">
+                    <CheckCircle className="w-16 h-16 text-emerald-400 mx-auto animate-bounce" />
+                    <h3 className="text-xl font-bold text-white font-display">Thank you!</h3>
+                    <p className="text-slate-300 text-xs max-w-xs mx-auto">
+                      Your request has been received. Our field team will contact you shortly.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+
           </div>
         </div>
-      </>
-    );
-  }
+      </section>
+    </>
+  );
+}

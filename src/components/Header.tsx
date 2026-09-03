@@ -125,7 +125,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
       {/* Top Banner (Announcement bar) - Slides up on scroll */}
       <div 
-        className={`bg-[#e63946] text-white text-xs transition-all duration-300 overflow-hidden ${
+        className={`bg-[#dc2626] text-white text-xs transition-all duration-300 overflow-hidden ${
           isScrolled ? "h-0 opacity-0" : "h-[40px] opacity-100 flex items-center border-b border-white/10"
         }`}
       >
@@ -229,13 +229,13 @@ export default function Header() {
                     onClick={(e) => handleNavClick(e, item.href)}
                     className={`text-xs xl:text-sm font-bold transition-all duration-200 relative py-2 px-2 xl:px-2.5 rounded-lg cursor-pointer whitespace-nowrap ${
                       isActive 
-                        ? "text-[#e63946]" 
-                        : "text-[#000000] hover:text-[#e63946]"
+                        ? "text-[#dc2626]" 
+                        : "text-[#000000] hover:text-[#dc2626]"
                     }`}
                   >
                     {item.name}
                     <span 
-                      className={`absolute bottom-0 left-2 right-2 h-0.5 bg-[#e63946] transition-all duration-200 ${
+                      className={`absolute bottom-0 left-2 right-2 h-0.5 bg-[#dc2626] transition-all duration-200 ${
                         isActive ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
                       }`} 
                     />
@@ -248,7 +248,7 @@ export default function Header() {
             <div className="flex items-center space-x-2.5">
               <a
                 href="tel:+918637607910"
-                className="hidden sm:flex items-center space-x-1.5 bg-[#e63946] hover:bg-[#dc2626] text-white px-4 py-2.5 rounded-xl text-xs xl:text-sm font-extrabold shadow-md transition-all duration-200 hover:shadow-lg active:scale-95 border border-[#e63946] whitespace-nowrap"
+                className="hidden sm:flex items-center space-x-1.5 bg-[#dc2626] hover:bg-[#dc2626] text-white px-4 py-2.5 rounded-xl text-xs xl:text-sm font-extrabold shadow-md transition-all duration-200 hover:shadow-lg active:scale-95 border border-[#dc2626] whitespace-nowrap"
               >
                 <Phone className="w-3.5 h-3.5 fill-white" />
                 <span>Call Now</span>
@@ -269,10 +269,10 @@ export default function Header() {
               {/* Mobile Hamburger Button (RED Icon) */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-xl transition-colors border border-[#e5e5e5] bg-[#f9f9f9] text-[#e63946] hover:bg-[#e63946] hover:text-white cursor-pointer"
+                className="lg:hidden p-2 rounded-xl transition-colors border border-[#e5e5e5] bg-[#f9f9f9] text-[#dc2626] hover:bg-[#dc2626] hover:text-white cursor-pointer"
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               >
-                {isMobileMenuOpen ? <X className="w-6 h-6 text-[#e63946]" /> : <Menu className="w-6 h-6 text-[#e63946]" />}
+                {isMobileMenuOpen ? <X className="w-6 h-6 text-[#dc2626]" /> : <Menu className="w-6 h-6 text-[#dc2626]" />}
               </button>
             </div>
 
@@ -294,12 +294,12 @@ export default function Header() {
               {/* ISO Certified Header in Mobile Menu */}
               <div className="bg-[#f9f9f9] border border-[#e5e5e5] rounded-xl p-3 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <span className="bg-[#e63946] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                  <span className="bg-[#dc2626] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
                     ISO Certified
                   </span>
                   <span className="text-xs font-bold text-[#000000]">Safety Nets</span>
                 </div>
-                <span className="text-[11px] font-semibold text-[#e63946]">All Chennai</span>
+                <span className="text-[11px] font-semibold text-[#dc2626]">All Chennai</span>
               </div>
 
               <div className="grid grid-cols-1 gap-1">
@@ -322,8 +322,8 @@ export default function Header() {
                       onClick={(e) => handleNavClick(e, item.href)}
                       className={`block px-4 py-3 rounded-xl text-base font-bold transition-all ${
                         isActive 
-                          ? "text-[#e63946] bg-[#f9f9f9] border-l-4 border-[#e63946] pl-3" 
-                          : "text-[#000000] hover:text-[#e63946] hover:bg-[#f9f9f9]"
+                          ? "text-[#dc2626] bg-[#f9f9f9] border-l-4 border-[#dc2626] pl-3" 
+                          : "text-[#000000] hover:text-[#dc2626] hover:bg-[#f9f9f9]"
                       }`}
                     >
                       {item.name}
@@ -336,7 +336,7 @@ export default function Header() {
               <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[#e5e5e5]">
                 <a
                   href="tel:+918637607910"
-                  className="flex items-center justify-center space-x-2 bg-[#e63946] hover:bg-[#dc2626] text-white py-3.5 rounded-xl text-sm font-bold shadow-md transition-all active:scale-98 border border-[#e63946]"
+                  className="flex items-center justify-center space-x-2 bg-[#dc2626] hover:bg-[#dc2626] text-white py-3.5 rounded-xl text-sm font-bold shadow-md transition-all active:scale-98 border border-[#dc2626]"
                 >
                   <Phone className="w-4 h-4 fill-white" />
                   <span>Call Now</span>

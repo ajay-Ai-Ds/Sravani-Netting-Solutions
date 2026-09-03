@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="flex space-x-3">
               <a
                 href="tel:+918637607910"
-                className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e63946] hover:bg-[#dc2626] text-white transition-colors duration-200 border border-[#e63946]"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ef4444] hover:bg-[#dc2626] text-white transition-colors duration-200 border border-[#ef4444]"
                 aria-label="Call Us"
               >
                 <Phone className="w-5 h-5 fill-white" />
@@ -81,7 +81,7 @@ export default function Footer() {
                 <a
                   href="#home"
                   onClick={(e) => handleNavClick(e, "#home")}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Home
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/blog"
-                  className="text-[#e63946] hover:text-white transition-colors font-bold"
+                  className="text-[#ef4444] hover:text-white transition-colors font-bold"
                 >
                   Blog & Articles
                 </a>
@@ -101,7 +101,7 @@ export default function Footer() {
                     handleNavClick(e, "#services");
                     window.dispatchEvent(new CustomEvent("change-services-tab", { detail: "nets" }));
                   }}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Safety Nets
                 </a>
@@ -113,7 +113,7 @@ export default function Footer() {
                     handleNavClick(e, "#services");
                     window.dispatchEvent(new CustomEvent("change-services-tab", { detail: "grills" }));
                   }}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Invisible Grills
                 </a>
@@ -125,7 +125,7 @@ export default function Footer() {
                     handleNavClick(e, "#services");
                     window.dispatchEvent(new CustomEvent("change-services-tab", { detail: "hangers" }));
                   }}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Cloth Hangers
                 </a>
@@ -134,7 +134,7 @@ export default function Footer() {
                 <a
                   href="#why-choose-us"
                   onClick={(e) => handleNavClick(e, "#why-choose-us")}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Why Choose Us
                 </a>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <a
                   href="#gallery"
                   onClick={(e) => handleNavClick(e, "#gallery")}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Gallery
                 </a>
@@ -152,7 +152,7 @@ export default function Footer() {
                 <a
                   href="#reviews"
                   onClick={(e) => handleNavClick(e, "#reviews")}
-                  className="text-[#e63946] hover:text-white transition-colors font-medium"
+                  className="text-[#ef4444] hover:text-white transition-colors font-medium"
                 >
                   Reviews
                 </a>
@@ -179,21 +179,21 @@ export default function Footer() {
             <h3 className="font-bold text-white text-base mb-4 font-display">Contact Info</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
-                <MapPin className="w-5 h-5 text-[#e63946] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#ef4444] shrink-0 mt-0.5" />
                 <span className="text-slate-300">Chennai, Tamil Nadu - India</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#e63946] shrink-0" />
-                <a href="tel:+918637607910" className="text-white hover:text-[#e63946] transition-colors font-semibold">
+                <Phone className="w-4 h-4 text-[#ef4444] shrink-0" />
+                <a href="tel:+918637607910" className="text-white hover:text-[#ef4444] transition-colors font-semibold">
                   +91 86376 07910
                 </a>
                 <span className="text-slate-500">/</span>
-                <a href="tel:+919042906652" className="text-white hover:text-[#e63946] transition-colors font-semibold">
+                <a href="tel:+919042906652" className="text-white hover:text-[#ef4444] transition-colors font-semibold">
                   +91 90429 06652
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#e63946] shrink-0" />
+                <Mail className="w-4 h-4 text-[#ef4444] shrink-0" />
                 <a href="mailto:sravaninettingsolutions@gmail.com" className="text-slate-300 hover:text-white transition-colors">
                   sravaninettingsolutions@gmail.com
                 </a>
@@ -221,7 +221,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-[#e63946] shrink-0" />
+                <Clock className="w-4 h-4 text-[#ef4444] shrink-0" />
                 <span className="text-slate-300">Open 24 Hours / 7 Days</span>
               </li>
             </ul>

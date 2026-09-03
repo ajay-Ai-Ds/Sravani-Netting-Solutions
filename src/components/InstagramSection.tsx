@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, MessageCircle, ExternalLink, ShieldCheck, Sparkles, Camera, Play, Video } from "lucide-react";
+import Image from "next/image";
 import InstagramIcon from "./InstagramIcon";
 import FacebookIcon from "./FacebookIcon";
 
@@ -13,7 +14,8 @@ const reelsData = [
     location: "Chennai, Tamil Nadu",
     url: "https://www.instagram.com/reel/DY4n6Njy1Th/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DY4n6Njy1Th/embed",
-    badge: "Featured Installation Reel 1"
+    badge: "Featured Installation Reel 1",
+    previewImage: "/images/balcony.webp"
   },
   {
     id: "DIFk-FvSVS7",
@@ -21,7 +23,8 @@ const reelsData = [
     location: "Chennai, Tamil Nadu",
     url: "https://www.instagram.com/reel/DIFk-FvSVS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DIFk-FvSVS7/embed",
-    badge: "Featured Installation Reel 2"
+    badge: "Featured Installation Reel 2",
+    previewImage: "/images/balconygrill.webp"
   }
 ];
 
@@ -95,8 +98,13 @@ const socialPosts = [
 ];
 
 export default function InstagramSection() {
+  const [loadedReels, setLoadedReels] = useState<{ [key: string]: boolean }>({});
   const instagramUrl = "https://www.instagram.com/sravani_netting_solutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
   const facebookUrl = "https://www.facebook.com/profile.php?id=100088136656535";
+
+  const loadReel = (id: string) => {
+    setLoadedReels((prev) => ({ ...prev, [id]: true }));
+  };
 
   return (
     <section id="instagram" className="py-20 bg-slate-950 text-white relative overflow-hidden">
@@ -192,16 +200,38 @@ export default function InstagramSection() {
                   </a>
                 </div>
 
-                {/* Instagram Embedded Reel Iframe */}
+                {/* Instagram Embedded Reel Preview / Iframe */}
                 <div className="w-full relative aspect-[9/16] sm:h-[480px] bg-slate-950 rounded-2xl overflow-hidden shadow-inner border border-slate-800">
-                  <iframe
-                    src={reel.embedUrl}
-                    className="w-full h-full border-0 rounded-2xl"
-                    allowFullScreen
-                    scrolling="no"
-                    loading="lazy"
-                    title={reel.title}
-                  />
+                  {loadedReels[reel.id] ? (
+                    <iframe
+                      src={reel.embedUrl}
+                      className="w-full h-full border-0 rounded-2xl"
+                      allowFullScreen
+                      scrolling="no"
+                      title={reel.title}
+                    />
+                  ) : (
+                    <div className="relative w-full h-full flex flex-col items-center justify-center group cursor-pointer" onClick={() => loadReel(reel.id)}>
+                      <Image
+                        src={reel.previewImage}
+                        alt={reel.title}
+                        fill
+                        className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, 400px"
+                      />
+                      <div className="absolute inset-0 bg-slate-950/60 flex flex-col items-center justify-center p-6 text-center">
+                        <button
+                          type="button"
+                          className="w-16 h-16 rounded-full bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform mb-3"
+                          aria-label={`Play ${reel.title}`}
+                        >
+                          <Play className="w-7 h-7 fill-white ml-0.5" />
+                        </button>
+                        <p className="text-white font-bold text-sm font-display mb-1">{reel.title}</p>
+                        <span className="text-xs text-pink-300 font-semibold bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">Click to Play Live Reel</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Reel Caption Footer */}
@@ -279,10 +309,13 @@ export default function InstagramSection() {
 
                 {/* Image Container with Hover Overlay */}
                 <div className="relative aspect-square overflow-hidden bg-slate-950">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
                   />
                   
                   {/* Gradient Overlay */}

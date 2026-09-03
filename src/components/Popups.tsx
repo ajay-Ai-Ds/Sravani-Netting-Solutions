@@ -111,7 +111,7 @@ export default function Popups() {
             className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 z-10"
           >
             {/* Header / Offer Banner */}
-            <div className="bg-[#e63946] text-white p-5 pr-12 relative border-b border-[#dc2626]">
+            <div className="bg-[#dc2626] text-white p-5 pr-12 relative border-b border-[#dc2626]">
               <h2 className="font-bold text-xl font-display leading-tight text-white">
                 {formType === "exit" 
                   ? "Wait! Get a Free Inspection Today 🏷️" 
@@ -144,7 +144,7 @@ export default function Popups() {
                       placeholder="Enter your name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
                     />
                   </div>
 
@@ -159,7 +159,7 @@ export default function Popups() {
                       placeholder="Enter 10-digit phone number"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
                     />
                   </div>
 
@@ -171,7 +171,7 @@ export default function Popups() {
                       id="popup-service"
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm bg-white text-[#000000] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm bg-white text-[#000000] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
                     >
                       {servicesList.map((srv) => (
                         <option key={srv} value={srv}>
@@ -191,25 +191,25 @@ export default function Popups() {
                       placeholder="Any specific instructions..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all resize-none"
+                      className="w-full px-3 py-2 border border-[#e5e5e5] rounded-lg text-sm text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all resize-none"
                     />
                   </div>
 
                   {/* Trust Factors inside popup */}
                   <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-700 pt-1">
                     <span className="flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 bg-[#e63946] rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></span>
                       <span>Same-Day Inspection</span>
                     </span>
                     <span className="flex items-center space-x-1">
-                      <span className="w-1.5 h-1.5 bg-[#e63946] rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></span>
                       <span>No Obligation Quote</span>
                     </span>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#e63946] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 border border-[#e63946]"
+                    className="w-full bg-[#dc2626] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 border border-[#dc2626]"
                   >
                     <Send className="w-4 h-4 fill-white" />
                     <span>Get Free Quote Now</span>
@@ -220,9 +220,9 @@ export default function Popups() {
                     <div className="flex justify-center space-x-4 mt-2">
                       <a
                         href="tel:+918637607910"
-                        className="flex items-center space-x-1 text-[#e63946] hover:text-[#dc2626] font-bold text-xs"
+                        className="flex items-center space-x-1 text-[#dc2626] hover:text-[#dc2626] font-bold text-xs"
                       >
-                        <Phone className="w-3 h-3 fill-[#e63946]" />
+                        <Phone className="w-3 h-3 fill-[#dc2626]" />
                         <span>Call +91 86376 07910</span>
                       </a>
                     </div>
@@ -230,7 +230,7 @@ export default function Popups() {
                 </form>
               ) : (
                 <div className="py-8 flex flex-col items-center justify-center text-center space-y-3">
-                  <CheckCircle className="w-16 h-16 text-[#e63946] animate-bounce" />
+                  <CheckCircle className="w-16 h-16 text-[#dc2626] animate-bounce" />
                   <h3 className="font-bold text-lg text-[#000000] font-display">Enquiry Submitted!</h3>
                   <p className="text-sm text-slate-700 max-w-xs">
                     Thank you. Our executive will call you in the next 15 minutes to schedule the visit.

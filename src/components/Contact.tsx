@@ -59,7 +59,7 @@ export default function Contact() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#e63946]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#dc2626]">
             Contact Us
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-2 font-display">
@@ -68,11 +68,11 @@ export default function Contact() {
           <p className="text-slate-700 mt-3 text-sm sm:text-base">
             Get in touch with us via phone, WhatsApp, or the enquiry form. We serve all areas in Chennai.
           </p>
-          <div className="h-1 bg-[#e63946] w-16 mx-auto mt-4 rounded" />
+          <div className="h-1 bg-[#dc2626] w-16 mx-auto mt-4 rounded" />
         </div>
 
         {/* Big Conversion Banner at Top of Contact */}
-        <div className="bg-[#e63946] text-white rounded-3xl p-8 sm:p-12 shadow-xl mb-16 relative overflow-hidden border border-[#dc2626] text-center md:text-left">
+        <div className="bg-[#dc2626] text-white rounded-3xl p-8 sm:p-12 shadow-xl mb-16 relative overflow-hidden border border-[#dc2626] text-center md:text-left">
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-black/10 rounded-full blur-3xl pointer-events-none" />
           
@@ -92,9 +92,9 @@ export default function Contact() {
             <div className="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">
               <a
                 href="tel:+918637607910"
-                className="flex items-center justify-center space-x-2 bg-white text-[#e63946] hover:bg-slate-100 py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
+                className="flex items-center justify-center space-x-2 bg-white text-[#dc2626] hover:bg-slate-100 py-4 px-6 rounded-xl font-extrabold text-base shadow-md transition-all active:scale-98"
               >
-                <Phone className="w-5 h-5 fill-[#e63946]" />
+                <Phone className="w-5 h-5 fill-[#dc2626]" />
                 <span>Call +91 86376 07910</span>
               </a>
               <a
@@ -122,7 +122,7 @@ export default function Contact() {
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3 text-slate-700 text-sm sm:text-base">
-                  <MapPin className="w-5 h-5 text-[#e63946] shrink-0 mt-1" />
+                  <MapPin className="w-5 h-5 text-[#dc2626] shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-[#000000] block">Our Address</span>
                     <span>Chennai, Tamil Nadu - India</span>
@@ -130,7 +130,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-3 text-slate-700 text-sm sm:text-base">
-                  <Clock className="w-5 h-5 text-[#e63946] shrink-0 mt-1" />
+                  <Clock className="w-5 h-5 text-[#dc2626] shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-[#000000] block">Business Hours</span>
                     <span>Open 24 Hours / 7 Days a week (Sunday inclusive)</span>
@@ -138,10 +138,10 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-3 text-slate-700 text-sm sm:text-base">
-                  <Mail className="w-5 h-5 text-[#e63946] shrink-0 mt-1" />
+                  <Mail className="w-5 h-5 text-[#dc2626] shrink-0 mt-1" />
                   <div>
                     <span className="font-bold text-[#000000] block">Email Address</span>
-                    <a href="mailto:sravaninettingsolutions@gmail.com" className="hover:text-[#e63946] transition-colors">
+                    <a href="mailto:sravaninettingsolutions@gmail.com" className="hover:text-[#dc2626] transition-colors">
                       sravaninettingsolutions@gmail.com
                     </a>
                   </div>
@@ -217,7 +217,7 @@ export default function Contact() {
                       placeholder="Enter your name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
                     />
                   </div>
 
@@ -233,7 +233,7 @@ export default function Contact() {
                         placeholder="Enter phone number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
+                        className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
                       />
                     </div>
                     <div>
@@ -244,7 +244,7 @@ export default function Contact() {
                         id="contact-service"
                         value={service}
                         onChange={(e) => setService(e.target.value)}
-                        className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all"
+                        className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all"
                       >
                         {servicesList.map((srv) => (
                           <option key={srv} value={srv}>
@@ -265,13 +265,13 @@ export default function Contact() {
                       placeholder="Enter detail requirements (e.g. Balcony height, area size, preferred installation time)"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#e63946] focus:border-[#e63946] transition-all resize-none"
+                      className="w-full px-3.5 py-2.5 bg-white border border-[#e5e5e5] rounded-lg text-[16px] text-[#000000] placeholder-[#999999] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-[#dc2626] transition-all resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#e63946] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer border border-[#e63946]"
+                    className="w-full bg-[#dc2626] hover:bg-[#dc2626] text-white py-3 rounded-lg text-sm font-bold flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition-all active:scale-98 cursor-pointer border border-[#dc2626]"
                   >
                     <Send className="w-4 h-4 fill-white" />
                     <span>Submit Request</span>
@@ -279,7 +279,7 @@ export default function Contact() {
                 </form>
               ) : (
                 <div className="py-16 text-center space-y-4">
-                  <CheckCircle className="w-16 h-16 text-[#e63946] mx-auto animate-bounce" />
+                  <CheckCircle className="w-16 h-16 text-[#dc2626] mx-auto animate-bounce" />
                   <h3 className="text-2xl font-bold text-[#000000] font-display">Message Sent Successfully!</h3>
                   <p className="text-slate-600 text-sm max-w-xs mx-auto">
                     Thank you. We have received your query. Our field manager will call you immediately to arrange the visit.
